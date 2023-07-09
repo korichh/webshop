@@ -1,0 +1,87 @@
+/*=============== Fonts ====================================================================================================================================================================*/
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/poppins-v20-latin-300.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/poppins-v20-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/poppins-v20-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/poppins-v20-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/poppins-v20-latin-700.woff2") format("woff2");
+}
+
+/*=============== /Fonts ====================================================================================================================================================================*/
+
+/*=============== Options ====================================================================================================================================================================*/
+
+body {
+    font-family: "Poppins";
+}
+
+.page {
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    padding-top: 60px;
+    flex: 1 1 auto;
+}
+
+.container {
+    max-width: $maxWidthContainer + 2 * $padding + px;
+    margin: 0 auto;
+    padding: 0 $padding + px;
+}
+
+/*=============== /Options ====================================================================================================================================================================*/
+
+/*=============== Common ====================================================================================================================================================================*/
+
+.ibg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.ibg img {
+    display: none;
+}
+
+/*=============== /Common ====================================================================================================================================================================*/

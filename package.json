@@ -1,0 +1,28 @@
+{
+    "name": "gulp-workflow",
+    "version": "1.0.0",
+    "description": "gulp-workflow",
+    "main": "gulpfile.js",
+    "type": "module",
+    "scripts": {
+        "gulp": "gulp",
+        "backend": "gulp backend",
+        "zip": "gulp zip"
+    },
+    "author": "korichh",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.26.14",
+        "del": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-beautify": "^3.0.0",
+        "gulp-file-include": "^2.3.0",
+        "gulp-group-css-media-queries": "^1.2.2",
+        "gulp-if": "^3.0.0",
+        "gulp-sass": "^5.0.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-zip": "^5.1.0",
+        "sass": "^1.45.1"
+    }
+}
