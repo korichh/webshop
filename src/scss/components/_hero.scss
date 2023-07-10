@@ -8,10 +8,12 @@
     .swiper-wrapper {
     }
     .slide {
+        height: auto;
     }
     .slide-wrapper {
         width: 100%;
         min-height: 100vh;
+        height: 100%;
         display: flex;
         align-items: center;
         position: relative;
@@ -107,6 +109,10 @@
                 left: 0;
                 width: 100%;
             }
+        }
+
+        &:active {
+            transform: scale(0.95);
         }
     }
     .swiper-scrollbar {

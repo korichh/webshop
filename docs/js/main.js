@@ -22,7 +22,7 @@ const main_init = function() {
         }
 
         const checkHeader = () => {
-            (scrollY > 100) ?
+            (scrollY > 80) ?
             header.classList.add('_scroll-active'):
                 header.classList.remove('_scroll-active')
         }
@@ -33,12 +33,12 @@ const main_init = function() {
     if (heroSwiper) {
         const scrollbar = heroSwiper.querySelector('.swiper-scrollbar');
         new Swiper(heroSwiper, {
-            // autoplay: {
-            //     delay: 5000,
-            //     disableOnInteraction: false,
-            //     pauseOnMouseEnter: true,
-            // },
-            // speed: 500,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            speed: 500,
 
             scrollbar: {
                 el: scrollbar,
