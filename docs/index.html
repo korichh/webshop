@@ -7,10 +7,12 @@
     <title>Document</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/options.css">
     <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/main.css">
 
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 
@@ -20,21 +22,41 @@
             <div class="header-bar"></div>
             <div class="container">
                 <div class="header-inner">
-                    <div class="header-inner__logo header-logo">
-                        <a href="#">
-                            #logo
-                        </a>
-                    </div>
                     <nav class="header-inner__nav header-nav">
-                        <ul class="menu">
+                        <ul class="menu menu-pages">
                             <li class="menu-item">
-                                <a href="#">Point 1</a>
+                                <a href="#">Home</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#">Point 2</a>
+                                <a href="#">Shop</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#">Point 3</a>
+                                <a href="#">About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                        <ul class="menu menu-icons">
+                            <li class="menu-item">
+                                <a href="#">
+                                    <img src="./img/account.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">
+                                    <img src="./img/search.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">
+                                    <img src="./img/favorite.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">
+                                    <img src="./img/cart.svg" alt="">
+                                </a>
                             </li>
                         </ul>
                     </nav>
@@ -45,7 +67,53 @@
             </div>
         </header>
         <main class="main">
-
+            <section class="hero">
+                <div class="hero-wrapper">
+                    <div class="hero-swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-bg ibg">
+                                        <img src="./img/main/main.png" alt="">
+                                    </div>
+                                    <div class="container">
+                                        <div class="slide-inner">
+                                            <h2 class="slide-title">
+                                                Rocket single seater
+                                            </h2>
+                                            <div class="slide-button-wrapper">
+                                                <a href="#" class="slide-button">
+                                                    Shop Now
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-bg ibg">
+                                        <img src="./img/main/main.png" alt="">
+                                    </div>
+                                    <div class="container">
+                                        <div class="slide-inner">
+                                            <h2 class="slide-title">
+                                                Rocket single seater another word to that
+                                            </h2>
+                                            <div class="slide-button-wrapper">
+                                                <a href="#" class="slide-button">
+                                                    Shop Now
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer class="footer">
         </footer>

@@ -1,7 +1,7 @@
-const main = function () {
+const main_init = function () {
     const ibg = document.querySelectorAll('.ibg');
-    const burger = document.querySelector('.header-burger');
-    const nav = document.querySelector('.header-nav');
+    const header = document.querySelector('.header');
+    const heroSwiper = document.querySelector('.hero-swiper');
 
     if (ibg.length > 0) {
         for (let i = 0; i < ibg.length; i++) {
@@ -11,12 +11,39 @@ const main = function () {
         }
     }
 
-    if (burger && nav) {
-        const toggleBurger = (e) => {
-            document.body.classList.toggle('_lock');
-            burger.classList.toggle('_active');
-            nav.classList.toggle('_active');
+    if (header) {
+        const burger = header.querySelector('.header-burger');
+        if (burger) {
+            const toggleBurger = () => {
+                document.body.classList.toggle('_lock');
+                header.classList.toggle('_burger-active')
+            }
+            burger.addEventListener('click', toggleBurger)
         }
-        burger.addEventListener('click', toggleBurger)
+
+        const checkHeader = () => {
+            (scrollY > 100) ?
+                header.classList.add('_scroll-active') :
+                header.classList.remove('_scroll-active')
+        }
+        checkHeader();
+        document.addEventListener('scroll', checkHeader);
+    }
+
+    if (heroSwiper) {
+        const scrollbar = heroSwiper.querySelector('.swiper-scrollbar');
+        new Swiper(heroSwiper, {
+            // autoplay: {
+            //     delay: 5000,
+            //     disableOnInteraction: false,
+            //     pauseOnMouseEnter: true,
+            // },
+            // speed: 500,
+
+            scrollbar: {
+                el: scrollbar,
+                draggable: true,
+            },
+        });
     }
 }();
