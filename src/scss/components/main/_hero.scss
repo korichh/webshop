@@ -35,10 +35,13 @@
         justify-content: center;
         @media (max-width: $break_992) {
             min-height: unset;
-            padding: 90px 0 40px 40px;
+            padding: 40px 0 60px 40px;
         }
         @media (max-width: $break_768) {
             padding-left: 20px;
+        }
+        @media (max-width: $break_600) {
+            padding-left: 10px;
         }
     }
     .slide-title {
@@ -116,6 +119,10 @@
         }
     }
     .swiper-scrollbar {
+        @media (max-width: $break_992) {
+            bottom: unset;
+            top: 5px;
+        }
     }
 }
 

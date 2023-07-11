@@ -2,6 +2,9 @@
 
 .footer {
     background: #fff;
+    @media (max-width: $break_992) {
+        margin-bottom: 60px;
+    }
 }
 .footer-wrapper {
     padding-top: 90px;
