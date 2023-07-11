@@ -1,0 +1,190 @@
+/*=============== Footer ====================================================================================================================================================================*/
+
+.footer {
+    background: #fff;
+}
+.footer-wrapper {
+    padding-top: 90px;
+    @media (max-width: $break_992) {
+        padding-top: 60px;
+    }
+    @media (max-width: $break_600) {
+        padding-top: 40px;
+    }
+}
+.footer-inner {
+    // .footer-inner__bar
+
+    &__bar {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+
+        @media (max-width: $break_992) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    // .footer-inner__address
+
+    &__address {
+        max-width: 290px;
+        margin-right: 130px;
+
+        color: #9f9f9f;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+
+        @media (max-width: $break_1200) {
+            margin-right: 80px;
+        }
+        @media (max-width: $break_992) {
+            max-width: unset;
+            text-align: center;
+            margin: 0;
+        }
+        @media (max-width: $break_600) {
+            font-size: 14px;
+        }
+    }
+
+    // .footer-inner__columns
+
+    &__columns {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+        margin-bottom: 30px;
+
+        @media (max-width: $break_992) {
+            flex: unset;
+            width: 100%;
+            justify-content: center;
+        }
+        @media (max-width: $break_600) {
+            margin-bottom: 40px;
+        }
+    }
+
+    // .footer-inner__copyright
+
+    &__copyright {
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        padding: 35px 0;
+        border-top: 1px solid #d9d9d9;
+
+        @media (max-width: $break_992) {
+            text-align: center;
+        }
+        @media (max-width: $break_600) {
+            font-size: 14px;
+        }
+        @media (max-width: $break_600) {
+            padding: 20px 0;
+        }
+    }
+}
+.footer-column {
+    padding: 0 15px;
+    // .footer-column__heading
+
+    &__heading {
+        color: #9f9f9f;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 55px;
+
+        @media (max-width: $break_600) {
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+    }
+
+    &:last-child {
+        max-width: 310px;
+        flex: 1 1 auto;
+    }
+
+    @media (max-width: $break_992) {
+        flex: 0 1 33.333%;
+    }
+    @media (max-width: $break_768) {
+        flex: 0 1 50%;
+    }
+}
+.footer-list {
+    margin-top: -23px;
+    padding: 0;
+    @media (max-width: $break_600) {
+        margin-top: -15px;
+    }
+    // .footer-list__item
+
+    &__item {
+        margin: 0 -10px;
+        @media (max-width: $break_600) {
+            margin: 0 -5px;
+        }
+        list-style-type: none;
+        a {
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: normal;
+            text-decoration: none;
+            display: inline-block;
+            padding: 23px 10px;
+
+            @media (max-width: $break_600) {
+                padding: 15px 5px;
+                font-size: 14px;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.footer-form {
+    // .footer-form__row
+
+    &__row {
+        display: flex;
+    }
+
+    input[type="email"] {
+        color: #000;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: normal;
+
+        width: 100%;
+
+        border: none;
+        border-bottom: 1px solid #000;
+        padding: 3px;
+        margin-right: 10px;
+    }
+    input[type="email"]::placeholder {
+        color: #9f9f9f;
+    }
+    input[type="submit"] {
+        color: #000;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: normal;
+        border: none;
+        border-bottom: 1px solid #000;
+        background: none;
+    }
+}
+
+/*=============== /Footer ====================================================================================================================================================================*/

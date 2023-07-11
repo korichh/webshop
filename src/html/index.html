@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 
-@include('components/head.html')
+@include('components/options/head.html')
 
 <body>
     <div class="page">
-        @include('components/header.html')
+        @include('components/header-footer/header.html')
         <main class="main">
-            @include('components/hero.html')
-            @include('components/offer.html')
-            @include('components/picks.html')
-            @include('components/arrivals.html')
+            @include('components/main/hero.html')
+            @include('components/main/offer.html')
+            @include('components/main/picks.html')
+            @include('components/main/arrivals.html')
+            @include('components/main/blogs.html')
+            @include('components/main/banner.html')
         </main>
-        @include('components/footer.html')
+        @include('components/header-footer/footer.html')
     </div>
 </body>
 
