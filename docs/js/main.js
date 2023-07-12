@@ -41,11 +41,25 @@ const main_init = function() {
     }
 
     if (menuIcons.length > 0 && toolbar) {
+        const toolbarSections = toolbar.querySelectorAll('.toolbar-section');
         const openToolbar = (e) => {
             e.preventDefault();
 
             if (!toolbar.classList.contains('_active')) {
                 toolbar.classList.add('_active');
+                document.body.classList.add('_lock');
+            }
+
+            if (toolbarSections.length > 0) {
+                const selector = e.target.getAttribute('href');
+                for (const section of toolbarSections) {
+                    section.classList.remove('_active');
+
+                    const sectionSelector = section.dataset.id;
+                    if (sectionSelector === selector) {
+                        section.classList.add('_active');
+                    }
+                }
             }
         }
         const menuItems = [];
@@ -61,6 +75,7 @@ const main_init = function() {
 
             if (toolbar.classList.contains('_active')) {
                 toolbar.classList.remove('_active');
+                document.body.classList.remove('_lock');
             }
         }
         const close = toolbar.querySelector('.toolbar-close');
@@ -72,6 +87,7 @@ const main_init = function() {
 
             if (toolbar.classList.contains('_active')) {
                 toolbar.classList.remove('_active');
+                document.body.classList.remove('_lock');
             }
         }
         toolbar.addEventListener('click', closeWrapperToolbar)

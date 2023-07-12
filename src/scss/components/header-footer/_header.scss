@@ -192,20 +192,31 @@
     align-items: flex-end;
 }
 .toolbar-inner {
-    border-radius: 25px 0 0 25px;
-    overflow: auto;
+    border-radius: 45px 0 0 45px;
+    overflow-y: auto;
+    overflow-x: hidden;
     position: relative;
     max-width: 30%;
     min-width: 400px;
     width: 100%;
     height: 100%;
     background-color: #fff;
+    padding: 25px;
 
     transform: translateX(100%);
     transition: transform 0.3s ease 0s;
 
+    @media (max-width: $break_1200) {
+        border-radius: 35px 0 0 35px;
+    }
+
+    @media (max-width: $break_992) {
+        border-radius: 30px 0 0 30px;
+    }
+
     @media (max-width: $break_768) {
         border-radius: 25px 25px 0 0;
+        padding: 20px;
         max-width: unset;
         min-width: unset;
         width: 100%;
@@ -213,10 +224,108 @@
         height: 100%;
         transform: translateY(100%);
     }
+
+    @media (max-width: $break_480) {
+        padding: 15px;
+    }
 }
 .toolbar-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: transparent;
+    border: none;
+    padding: 25px;
+
+    transition: transform 0.3s ease 0s;
+
+    @media (max-width: $break_768) {
+        padding: 20px;
+    }
+
+    @media (max-width: $break_480) {
+        padding: 15px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+
+    img {
+        display: block;
+        width: 30px;
+        pointer-events: none;
+    }
 }
 .toolbar-section {
+    display: none;
+
+    &._active {
+        display: block;
+    }
+
+    &__heading {
+        color: #000;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
+
+        border-bottom: 1px solid #d9d9d9;
+        padding-bottom: 20px;
+        margin-right: 50px;
+
+        @media (max-width: $break_768) {
+            padding-bottom: 15px;
+            font-size: 22px;
+        }
+
+        @media (max-width: $break_480) {
+            padding-bottom: 10px;
+        }
+    }
+
+    &__nav {
+        .menu {
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .menu-item {
+            list-style-type: none;
+
+            a {
+                color: #000;
+                font-size: 22px;
+                line-height: initial;
+                font-weight: 500;
+                display: block;
+                text-decoration: none;
+                padding: 15px 10px;
+                transition: background-color 0.2s ease 0s;
+
+                
+
+                &:hover {
+                    background-color: #f8f8f8;
+                }
+
+                &:active {
+                    background-color: #f0f0f0;
+                }
+            }
+
+            &:not(:last-child) {
+                a {
+                    border-bottom: 1px solid #d9d9d9;
+                }
+            }
+        }
+    }
 }
 
 /*=============== /Header ====================================================================================================================================================================*/
