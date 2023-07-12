@@ -50,6 +50,14 @@
         @media (max-width: $break_600) {
             font-size: 14px;
         }
+
+        img {
+            max-width: 70px;
+            display: block;
+            @media (max-width: $break_992) {
+                margin: 0 auto;
+            }
+        }
     }
 
     // .footer-inner__columns
