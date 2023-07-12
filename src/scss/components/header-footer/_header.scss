@@ -8,11 +8,25 @@
     width: 100%;
     top: 0;
     left: 0;
-    transition: background-color 0.3s ease-in-out 0s, box-shadow 0.3s ease-in-out 0s;
+    transition:
+        background-color 0.3s ease-in-out 0s,
+        box-shadow 0.3s ease-in-out 0s;
 
     &._scroll-active {
         background-color: #fbebb5;
         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: $break_992) {
+        top: unset;
+        bottom: 0;
+
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+        &._scroll-active {
+            background-color: #fff;
+            box-shadow: none;
+        }
     }
 }
 
@@ -25,6 +39,10 @@
         display: flex;
         align-items: center;
         padding: 0;
+    }
+
+    @media (max-width: $break_992) {
+        display: none;
     }
 
     .menu-pages {
@@ -67,6 +85,7 @@
         right: 0;
         img {
             max-width: 24px;
+            pointer-events: none;
         }
         a {
             color: #000;
@@ -102,6 +121,7 @@
 
     img {
         width: 30px;
+        pointer-events: none;
         display: block;
 
         @media (max-width: $break_480) {
@@ -133,26 +153,67 @@
     }
 }
 
-@media (max-width: $break_992) {
-    .header {
-        top: unset;
-        bottom: 0;
+._lock {
+    overflow: hidden;
+}
 
-        border-top: 1px solid rgba(0, 0, 0, 0.15);
-        background-color: #fff;
-        &._scroll-active {
-            background-color: #fff;
-            box-shadow: none;
+.toolbar {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+
+    transition:
+        background-color 0.3s ease 0s,
+        left 0s ease 0.3s;
+
+    &._active {
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        transition:
+            background-color 0.3s ease 0s,
+            left 0s ease 0s;
+
+        .toolbar-inner {
+            transform: translate(0, 0);
         }
     }
+}
+.toolbar-wrapper {
+    width: 100%;
+    height: 100%;
 
-    ._lock {
-        overflow: hidden;
-    }
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.toolbar-inner {
+    border-radius: 25px 0 0 25px;
+    overflow: auto;
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
 
-    .header-nav {
-        display: none;
+    transform: translateX(100%);
+    transition: transform 0.3s ease 0s;
+
+    @media (max-width: $break_768) {
+        border-radius: 25px 25px 0 0;
+        max-width: unset;
+        width: 100%;
+        max-height: 500px;
+        transform: translateY(100%);
     }
+}
+.toolbar-close {
+}
+.toolbar-section {
 }
 
 /*=============== /Header ====================================================================================================================================================================*/

@@ -2,6 +2,8 @@ const main_init = function () {
     const ibg = document.querySelectorAll('.ibg');
     const header = document.querySelector('.header');
     const heroSwiper = document.querySelector('.hero-swiper');
+    const menuIcons = document.querySelectorAll('.menu-icons');
+    const toolbar = document.querySelector('.toolbar');
 
     if (ibg.length > 0) {
         for (let i = 0; i < ibg.length; i++) {
@@ -12,22 +14,13 @@ const main_init = function () {
     }
 
     if (header) {
-        const burger = header.querySelector('.header-burger');
-        if (burger) {
-            const toggleBurger = () => {
-                document.body.classList.toggle('_lock');
-                header.classList.toggle('_burger-active')
-            }
-            burger.addEventListener('click', toggleBurger)
-        }
-
-        const checkHeader = () => {
+        const headerScroll = () => {
             (scrollY > 80) ?
                 header.classList.add('_scroll-active') :
                 header.classList.remove('_scroll-active')
         }
-        checkHeader();
-        document.addEventListener('scroll', checkHeader);
+        document.addEventListener('scroll', headerScroll);
+        headerScroll();
     }
 
     if (heroSwiper) {
@@ -45,5 +38,42 @@ const main_init = function () {
                 draggable: true,
             },
         });
+    }
+
+    if (menuIcons.length > 0 && toolbar) {
+        const openToolbar = (e) => {
+            e.preventDefault();
+
+            if (!toolbar.classList.contains('_active')) {
+                toolbar.classList.add('_active');
+            }
+        }
+        const menuItems = [];
+        for (const menu of menuIcons) {
+            menuItems.push(...menu.querySelectorAll('a'))
+        }
+        for (const item of menuItems) {
+            item.addEventListener('click', openToolbar)
+        }
+
+        const closeButtonToolbar = (e) => {
+            e.preventDefault();
+
+            if (toolbar.classList.contains('_active')) {
+                toolbar.classList.remove('_active');
+            }
+        }
+        const close = toolbar.querySelector('.toolbar-close');
+        close.addEventListener('click', closeButtonToolbar)
+
+        const closeWrapperToolbar = (e) => {
+            if (e.target.closest('.toolbar-inner'))
+                return;
+
+            if (toolbar.classList.contains('_active')) {
+                toolbar.classList.remove('_active');
+            }
+        }
+        toolbar.addEventListener('click', closeWrapperToolbar)
     }
 }();
