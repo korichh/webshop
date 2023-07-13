@@ -4,6 +4,8 @@ const main_init = function () {
     const heroSwiper = document.querySelector('.hero-swiper');
     const menuIcons = document.querySelectorAll('.menu-icons');
     const toolbar = document.querySelector('.toolbar');
+    const productsToolbar = document.querySelector('.products-toolbar');
+    const productsList = document.querySelector('.products-list');
 
     if (ibg.length > 0) {
         for (let i = 0; i < ibg.length; i++) {
@@ -54,7 +56,7 @@ const main_init = function () {
                 const selector = e.target.getAttribute('href');
                 for (const section of toolbarSections) {
                     section.classList.remove('_active');
-                    
+
                     const sectionSelector = section.dataset.id;
                     if (sectionSelector === selector) {
                         section.classList.add('_active');
@@ -91,5 +93,59 @@ const main_init = function () {
             }
         }
         toolbar.addEventListener('click', closeWrapperToolbar)
+    }
+
+    if (productsToolbar) {
+        const openToolbar = (e) => {
+            e.preventDefault();
+
+            if (!productsToolbar.classList.contains('_active')) {
+                productsToolbar.classList.add('_active');
+                document.body.classList.add('_lock');
+            }
+        }
+        const filterButton = document.querySelector('.products-tools__filter button');
+        filterButton.addEventListener('click', openToolbar);
+
+        const closeButtonToolbar = (e) => {
+            e.preventDefault();
+
+            if (productsToolbar.classList.contains('_active')) {
+                productsToolbar.classList.remove('_active');
+                document.body.classList.remove('_lock');
+            }
+        }
+        const close = productsToolbar.querySelector('.products-toolbar__close');
+        close.addEventListener('click', closeButtonToolbar)
+
+        const closeWrapperToolbar = (e) => {
+            if (e.target.closest('.products-toolbar__inner'))
+                return;
+
+            if (productsToolbar.classList.contains('_active')) {
+                productsToolbar.classList.remove('_active');
+                document.body.classList.remove('_lock');
+            }
+        }
+        productsToolbar.addEventListener('click', closeWrapperToolbar)
+    }
+
+    if (productsList) {
+        const buttons = document.querySelectorAll('.products-tools__grid button');
+        const toggleGrid = (e) => {
+            if (e.target.classList.contains('grid')) {
+                if (productsList.classList.contains('_list')) {
+                    productsList.classList.remove('_list')
+                }
+            } else {
+                if (!productsList.classList.contains('_list')) {
+                    productsList.classList.add('_list')
+                }
+            }
+        }
+
+        for (const button of buttons) {
+            button.addEventListener('click', toggleGrid);
+        }
     }
 }();

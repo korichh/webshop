@@ -5,6 +5,19 @@
     @media (max-width: $break_992) {
         margin-bottom: 60px;
     }
+
+    .logo {
+        display: inline-block;
+        transition: transform 0.3s ease 0s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
 }
 .footer-wrapper {
     padding-top: 90px;
