@@ -1,0 +1,80 @@
+/*=============== Charge ====================================================================================================================================================================*/
+
+.charge {
+    margin-top: 90px;
+    background-color: #faf4f4;
+    @media (max-width: $break_992) {
+        margin-top: 70px;
+    }
+    @media (max-width: $break_768) {
+        margin-top: 50px;
+    }
+}
+.charge-wrapper {
+    padding: 90px 0;
+    @media (max-width: $break_992) {
+        padding: 60px 0;
+    }
+    @media (max-width: $break_768) {
+        padding: 40px 0;
+    }
+}
+.charge-inner {
+}
+.charge-list {
+    padding: 0;
+    margin: -20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.charge-item {
+    padding: 20px;
+    list-style-type: none;
+    flex: 0 1 33.333%;
+
+    @media (max-width: $break_992) {
+        flex: 0 1 50%;
+    }
+
+    @media (max-width: $break_768) {
+        flex: 0 1 100%;
+        text-align: center;
+    }
+    // .charge-item__heading
+
+    &__heading {
+        color: #000;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: normal;
+
+        @media (max-width: $break_992) {
+            font-size: 28px;
+        }
+
+        @media (max-width: $break_768) {
+            font-size: 24px;
+        }
+    }
+
+    // .charge-item__text
+
+    &__text {
+        color: #9f9f9f;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: normal;
+
+        @media (max-width: $break_992) {
+            font-size: 18px;
+        }
+        @media (max-width: $break_768) {
+            font-size: 16px;
+        }
+    }
+}
+
+/*=============== /Charge ====================================================================================================================================================================*/

@@ -59,6 +59,26 @@
                                     <h3 class="products-toolbar__price-title products-toolbar__title">
                                         Price
                                     </h3>
+                                    <div class="products-toolbar__range">
+                                        <div class="slider">
+                                            <div class="progress"></div>
+                                        </div>
+                                        <div class="range-input">
+                                            <input type="range" class="range-min" min="0" max="500000" value="50000" step="10">
+                                            <input type="range" class="range-max" min="0" max="500000" value="300000" step="10">
+                                        </div>
+                                        <div class="price-input">
+                                            <div class="field">
+                                                <label for="range-min">Min</label>
+                                                <input id="range-min" type="number" class="input-min" value="50000">
+                                            </div>
+                                            <div class="separator">-</div>
+                                            <div class="field">
+                                                <label for="range-max">Max</label>
+                                                <input id="range-max" type="number" class="input-max" value="300000">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
