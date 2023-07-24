@@ -607,11 +607,11 @@
     // .products-pagination__item
 
     &__item {
-        margin: 10px;
+        padding: 10px;
         list-style-type: none;
 
         @media (max-width: $break_768) {
-            margin: 5px;
+            padding: 5px;
         }
 
         a {
