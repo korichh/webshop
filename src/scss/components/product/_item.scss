@@ -159,6 +159,8 @@
             padding: 4px;
             max-width: 100%;
             max-height: 100%;
+            pointer-events: none;
+            user-select: none;
         }
     }
 
@@ -201,6 +203,26 @@
             max-height: 100%;
         }
     }
+
+    &._active {
+        .item-view__item {
+            cursor: default;
+            button {
+                pointer-events: none;
+            }
+        }
+    }
+}
+.item-view__item,
+.item-view__image {
+    img {
+        opacity: 1;
+        transition: opacity 0.2s ease 0s;
+
+        &._active {
+            opacity: 0;
+        }
+    }
 }
 .item-about {
     // .item-about__heading
@@ -232,9 +254,6 @@
 
             &:hover {
                 transform: translateY(-3px) scale(1.05);
-                svg {
-                    fill: red;
-                }
             }
 
             &:active {
@@ -458,7 +477,7 @@
             margin-right: 15px;
         }
         &._active {
-            cursor: not-allowed;
+            cursor: default;
             button {
                 background-color: #fbebb5;
                 pointer-events: none;
@@ -478,7 +497,6 @@
                 background-color 0.3s ease 0s;
 
             &:hover {
-                background-color: #fbebb5;
                 transform: translateY(-2px) scale(1.05);
             }
 
@@ -516,9 +534,9 @@
         }
 
         &._active {
-            cursor: not-allowed;
+            cursor: default;
             button {
-                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
                 pointer-events: none;
             }
         }
@@ -534,7 +552,6 @@
                 box-shadow 0.3s ease 0s;
 
             &:hover {
-                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
                 transform: translateY(-2px) scale(1.05);
             }
 
@@ -679,8 +696,8 @@
                 font-size: 22px;
             }
             @media (max-width: $break_768) {
-                padding: 5px 15px;
-                font-size: 18px;
+                padding: 3px 15px;
+                font-size: 21px;
             }
 
             &:hover {
@@ -694,7 +711,7 @@
         }
 
         &._active {
-            cursor: not-allowed;
+            cursor: default;
             a {
                 color: #000;
                 pointer-events: none;
@@ -710,7 +727,7 @@
     // .item-feature__section
 
     &__section {
-        display: flex;
+        // display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: flex-start;
@@ -737,6 +754,12 @@
             max-width: 600px;
             width: 100%;
             margin: 0.5rem;
+        }
+
+        display: none;
+
+        &._active {
+            display: flex;
         }
     }
 }
