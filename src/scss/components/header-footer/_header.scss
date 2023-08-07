@@ -361,9 +361,80 @@
         height: 100%;
     }
 
+    // .toolbar-section__profile
+
+    &__profile {
+    }
+
     // .toolbar-section__cart
 
     &__cart {
+    }
+}
+
+.toolbar-profile {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    // .toolbar-profile__button-wrapper
+    &__button-wrapper {
+        max-width: 150px;
+        width: 100%;
+    }
+
+    // .toolbar-profile__button
+
+    &__button {
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+
+        display: block;
+        width: 100%;
+        text-align: center;
+
+        color: #000;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+
+        padding: 7px;
+        border: 1px solid #000;
+        border-radius: 50px;
+
+        transition:
+            color 0.3s ease 0s,
+            transform 0.3s ease 0s;
+
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 0;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: #000;
+            transition: width 0.3s ease 0s;
+            pointer-events: none;
+        }
+
+        &:hover {
+            color: #fff;
+            transform: scale(1.05);
+            &:before {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
     }
 }
 
@@ -479,6 +550,16 @@
         margin-right: -5px;
         img {
             display: block;
+            pointer-events: none;
+        }
+
+        transition: transform 0.3s ease 0s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+        &:active {
+            transform: scale(0.9);
         }
     }
 
@@ -542,6 +623,10 @@
     // .toolbar-cart__button
 
     &__button {
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+
         display: block;
         width: 100%;
         text-align: center;
@@ -551,10 +636,40 @@
         font-weight: 400;
         line-height: normal;
         text-decoration: none;
-        
+
         padding: 7px;
         border: 1px solid #000;
         border-radius: 50px;
+
+        transition:
+            color 0.3s ease 0s,
+            transform 0.3s ease 0s;
+
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 0;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: #000;
+            transition: width 0.3s ease 0s;
+            pointer-events: none;
+        }
+
+        &:hover {
+            color: #fff;
+            transform: scale(1.05);
+            &:before {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
     }
 }
 
