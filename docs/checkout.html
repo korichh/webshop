@@ -249,67 +249,130 @@
                                 <img src="img/logo.png" alt="">
                             </div>
                             <h1 class="banner-inner__title">
-                                My Account
+                                Checkout
                             </h1>
                             <div class="banner-inner__breadcrumbs banner-breadcrumbs">
-                                <a href="index.html">Home</a> <span>My Account</span>
+                                <a href="index.html">Home</a> <span>Checkout</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="auth">
-                <div class="auth-wrapper">
+            <section class="billing">
+                <div class="billing-wrapper">
                     <div class="container">
-                        <div class="auth-inner">
-                            <form action="#" method="post" class="auth-inner__form auth-form">
-                                <h3 class="auth-form__title">
-                                    Log In
-                                </h3>
-                                <div class="row">
-                                    <div class="block">
-                                        <label for="login">Username or email address</label>
-                                        <input type="text" id="login" name="login">
+                        <div class="billing-inner">
+                            <form action="#" method="post" class="billing-form">
+                                <div class="billing-form__details billing-details">
+                                    <h3 class="billing-details__title">
+                                        Billing details
+                                    </h3>
+                                    <div class="row">
+                                        <div class="block">
+                                            <label for="name">First Name</label>
+                                            <input type="text" name="name" id="name">
+                                        </div>
+                                        <div class="block">
+                                            <label for="lastname">Last Name</label>
+                                            <input type="text" name="lastname" id="lastname">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="block">
+                                            <label for="company_name">Company Name (Optional)</label>
+                                            <input type="text" name="company_name" id="company_name">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="block">
+                                            <label for="country">Country/Region</label>
+                                            <select name="country" id="country">
+                                                <option value="sri_lanka">Sri Lanka</option>
+                                                <option value="another_one">Another One</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="block">
+                                            <label for="street_address">Street address</label>
+                                            <input type="text" name="street_address" id="street_address">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="block">
+                                            <label for="town">Town/City</label>
+                                            <input type="text" name="town" id="town">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="block">
+                                            <label for="province">Province</label>
+                                            <select name="province" id="province">
+                                                <option value="western_province">Western Province</option>
+                                                <option value="another_one">Another One</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="block">
+                                            <label for="zip_code">ZIP code</label>
+                                            <input type="text" name="zip_code" id="zip_code">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="block">
+                                            <label for="phone">Phone</label>
+                                            <input type="text" name="phone" id="phone">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="block">
+                                            <label for="email">Email address</label>
+                                            <input type="text" name="email" id="email">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="block">
+                                            <input type="text" placeholder="Additional information" name="additional" id="additional">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="block">
-                                        <label for="password">Password</label>
-                                        <input type="password" id="password" name="password">
+                                <div class="billing-form__product billing-product">
+                                    <div class="billing-product__table billing-table">
+                                        <div class="billing-table__name row">
+                                            <div>Product</div>
+                                            <div>Subtotal</div>
+                                        </div>
+                                        <div class="billing-table__item row">
+                                            <div><span>Asgaard sofa</span> x 1</div>
+                                            <div>Rs. 250,000.00</div>
+                                        </div>
+                                        <div class="billing-table__subtotal row">
+                                            <div>Subtotal</div>
+                                            <div>Rs. 250,000.00</div>
+                                        </div>
+                                        <div class="billing-table__item row">
+                                            <div><span>Outdoor sofa set</span> x 1</div>
+                                            <div>Rs. 244,000.00</div>
+                                        </div>
+                                        <div class="billing-table__subtotal row">
+                                            <div>Subtotal</div>
+                                            <div>Rs. 244,000.00</div>
+                                        </div>
+                                        <div class="billing-table__total row">
+                                            <div>Total</div>
+                                            <div><span>Rs. 494,000.00</span></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="block block-row">
-                                        <input type="checkbox" id="remember" name="remember">
-                                        <label for="remember">Remember me</label>
+                                    <div class="billing-product__info">
+                                        <p>
+                                            Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <b>privacy policy</b>.
+                                        </p>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="block block-row">
-                                        <button type="submit">Log In</button>
-                                        <a href="#">Lost Your Password</a>
-                                    </div>
-                                </div>
-                            </form>
-                            <form action="#" method="post" class="auth-inner__form auth-form">
-                                <h3 class="auth-form__title">
-                                    Register
-                                </h3>
-                                <div class="row">
-                                    <div class="block">
-                                        <label for="register">Email address</label>
-                                        <input type="text" id="register" name="register">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="block">
-                                        <p>A link to set a new password will be sent to your email address.</p>
-                                        <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <b>privacy policy</b>.</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="block">
-                                        <button type="submit">Register</button>
+                                    <div class="billing-product__submit">
+                                        <button type="submit">
+                                            Place order
+                                        </button>
                                     </div>
                                 </div>
                             </form>

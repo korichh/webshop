@@ -727,10 +727,9 @@
     // .item-feature__section
 
     &__section {
-        // display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
 
         color: #9f9f9f;
         font-size: 16px;
@@ -751,9 +750,13 @@
             width: 100%;
         }
         img {
-            max-width: 600px;
+            max-width: 50%;
             width: 100%;
-            margin: 0.5rem;
+            padding: 0.5rem;
+            @media (max-width: $break_992) {
+                max-width: 600px;
+                padding: 0.5rem 0;
+            }
         }
 
         display: none;

@@ -1,0 +1,297 @@
+/*=============== Cart ====================================================================================================================================================================*/
+
+.cart {
+    background-color: #fff;
+}
+.cart-wrapper {
+    padding-top: 70px;
+    @media (max-width: $break_768) {
+        padding-top: 50px;
+    }
+}
+.cart-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: $break_992) {
+        flex-direction: column;
+    }
+}
+.cart-table-wrapper {
+    width: 100%;
+    overflow: auto;
+
+    margin-right: 30px;
+    @media (max-width: $break_992) {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+.cart-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+
+    thead {
+        background-color: #fff9e5;
+    }
+    th {
+        color: #000;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal;
+        padding: 15px;
+        text-align: left;
+    }
+    td {
+        padding: 20px 15px;
+    }
+}
+.cart-item {
+    // .cart-item__image
+
+    &__image {
+        padding: 20px 0 !important;
+        width: 100px;
+        min-width: 100px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+            background-color: #fbebb5;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            padding: 2px;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    // .cart-item__name
+
+    &__name {
+        color: #9f9f9f;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    // .cart-item__price
+
+    &__price {
+        color: #9f9f9f;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    // .cart-item__quantity
+
+    &__quantity {
+        input {
+            border-radius: 5px;
+            border: 1px solid #9f9f9f;
+            width: 35px;
+            height: 30px;
+            padding-left: 5px;
+
+            color: #000;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    // .cart-item__subtotal
+
+    &__subtotal {
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    // .cart-item__remove
+
+    &__remove {
+        padding: 0 !important;
+        button {
+            background-color: transparent;
+            border: none;
+            padding: 5px;
+
+            transition: transform 0.3s ease 0s;
+
+            &:hover {
+                transform: scale(1.1) translateY(-3px);
+            }
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+    }
+}
+.cart-bill {
+    max-width: 390px;
+    width: 100%;
+    background-color: #fff9e5;
+    padding: 15px;
+
+    @media (max-width: $break_992) {
+        align-self: center;
+    }
+    // .cart-bill__title
+
+    &__title {
+        color: #000;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: normal;
+        text-align: center;
+        margin-bottom: 50px;
+
+        @media (max-width: $break_768) {
+            font-size: 26px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__container {
+        max-width: 300px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+
+        @media (max-width: $break_768) {
+            margin-bottom: 30px;
+        }
+    }
+
+    // .cart-bill__subtotal
+
+    &__subtotal {
+        color: #000;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal;
+
+        span {
+            color: #9f9f9f;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+
+        @media (max-width: $break_768) {
+            margin-bottom: 20px;
+        }
+    }
+
+    // .cart-bill__total
+
+    &__total {
+        color: #000;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal;
+
+        span {
+            color: #b88e2f;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: normal;
+            @media (max-width: $break_768) {
+                font-size: 18px;
+            }
+        }
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // .cart-bill__button-wrapper
+
+    &__button-wrapper {
+        max-width: 220px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 15px;
+
+        @media (max-width: $break_768) {
+            max-width: 180px;
+        }
+    }
+
+    // .cart-bill__button
+
+    &__button {
+        display: inline-block;
+        color: #000;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: normal;
+        border-radius: 15px;
+        border: 1px solid #000;
+        width: 100%;
+        text-decoration: none;
+        padding: 12px 0;
+
+        @media (max-width: $break_768) {
+            padding: 8px;
+            font-size: 18px;
+        }
+
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+
+        transition:
+            color 0.3s ease 0s,
+            transform 0.3s ease 0s;
+
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 0;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: #000;
+            transition: width 0.3s ease 0s;
+            pointer-events: none;
+        }
+
+        &:hover {
+            color: #fff;
+            transform: scale(1.05);
+            &:before {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+/*=============== /Cart ====================================================================================================================================================================*/
