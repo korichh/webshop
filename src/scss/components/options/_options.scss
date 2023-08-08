@@ -45,7 +45,7 @@
 /*=============== Options ====================================================================================================================================================================*/
 
 body {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
 }
 
 .page {
@@ -60,6 +60,27 @@ body {
 
 .main {
     flex: 1 1 auto;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 100px;
+
+    .main-content {
+        border: 1px solid #000;
+        flex: 0 1 70%;
+        
+        margin-right: 30px;
+    }
+    .main-sidebar {
+        border: 1px solid #000;
+        flex: 0 1 30%;
+        
+        max-width: 300px;
+        width: 100%;
+    }
 }
 
 .container {
