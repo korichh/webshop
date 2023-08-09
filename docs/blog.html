@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/blog.css">
 
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script defer src="js/StickySidebar.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 
@@ -266,14 +267,320 @@
                 <div class="main-wrapper">
                     <div class="main-content">
                         <section class="blog">
-                            .blog-
+                            <div class="blog-wrapper">
+                                <div class="blog-inner">
+                                    <ul class="blog-inner__list blog-list">
+                                        <li class="blog-list__item blog-item">
+                                            <div class="blog-item__view">
+                                                <div class="blog-item__image">
+                                                    <a href="#" class="ibg">
+                                                        <img src="img/blog/item1.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="blog-item__links">
+                                                    <a href="#" class="blog-item__link">
+                                                        <img src="img/admin.svg" alt="">
+                                                        Admin
+                                                    </a>
+                                                    <a href="#" class="blog-item__link">
+                                                        <img src="img/calendar.svg" alt="">
+                                                        14 Oct 2022
+                                                    </a>
+                                                    <a href="#" class="blog-item__link">
+                                                        <img src="img/tag.svg" alt="">
+                                                        Wood
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="blog-item__content">
+                                                <h2 class="blog-item__heading">
+                                                    Going all-in with millennial design
+                                                </h2>
+                                                <div class="blog-item__text">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.</p>
+                                                </div>
+                                                <div class="blog-item__button-wrapper">
+                                                    <a href="#" class="blog-item__button">
+                                                        Read more
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="blog-list__item blog-item">
+                                            <div class="blog-item__view">
+                                                <div class="blog-item__image">
+                                                    <a href="#" class="ibg">
+                                                        <img src="img/blog/item2.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="blog-item__links">
+                                                    <div class="blog-item__link">
+                                                        <a href="#" class="blog-item__link">
+                                                            <img src="img/admin.svg" alt="">
+                                                            Admin
+                                                        </a>
+                                                    </div>
+                                                    <div class="blog-item__link">
+                                                        <a href="#" class="blog-item__link">
+                                                            <img src="img/calendar.svg" alt="">
+                                                            14 Oct 2022
+                                                        </a>
+                                                    </div>
+                                                    <div class="blog-item__link">
+                                                        <a href="#" class="blog-item__link">
+                                                            <img src="img/tag.svg" alt="">
+                                                            Handmade
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="blog-item__content">
+                                                <h2 class="blog-item__heading">
+                                                    Exploring new ways of decorating
+                                                </h2>
+                                                <div class="blog-item__text">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.</p>
+                                                </div>
+                                                <div class="blog-item__button-wrapper">
+                                                    <a href="#" class="blog-item__button">
+                                                        Read more
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="blog-list__item blog-item">
+                                            <div class="blog-item__view">
+                                                <div class="blog-item__image">
+                                                    <a href="#" class="ibg">
+                                                        <img src="img/blog/item3.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="blog-item__links">
+                                                    <div class="blog-item__link">
+                                                        <a href="#" class="blog-item__link">
+                                                            <img src="img/admin.svg" alt="">
+                                                            Admin
+                                                        </a>
+                                                    </div>
+                                                    <div class="blog-item__link">
+                                                        <a href="#" class="blog-item__link">
+                                                            <img src="img/calendar.svg" alt="">
+                                                            14 Oct 2022
+                                                        </a>
+                                                    </div>
+                                                    <div class="blog-item__link">
+                                                        <a href="#" class="blog-item__link">
+                                                            <img src="img/tag.svg" alt="">
+                                                            Wood
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="blog-item__content">
+                                                <h2 class="blog-item__heading">
+                                                    Handmade pieces that took time to make
+                                                </h2>
+                                                <div class="blog-item__text">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer malesuada nunc. In nulla posuere sollicitudin aliquam ultrices. Morbi blandit cursus risus at ultrices mi tempus imperdiet. Libero enim sed faucibus turpis in. Cursus mattis molestie a iaculis at erat. Nibh cras pulvinar mattis nunc sed blandit libero. Pellentesque elit ullamcorper dignissim cras tincidunt. Pharetra et ultrices neque ornare aenean euismod elementum.</p>
+                                                </div>
+                                                <div class="blog-item__button-wrapper">
+                                                    <a href="#" class="blog-item__button">
+                                                        Read more
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="blog-inner__pagination blog-pagination">
+                                        <ul class="blog-pagination__list">
+                                            <li class="blog-pagination__item">
+                                                <a href="#">1</a>
+                                            </li>
+                                            <li class="blog-pagination__item">
+                                                <a href="#">2</a>
+                                            </li>
+                                            <li class="blog-pagination__item">
+                                                <a href="#">3</a>
+                                            </li>
+                                            <li class="blog-pagination__item">
+                                                <a href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </section>
                     </div>
                     <aside class="main-sidebar blog-sidebar">
                         <div class="sidebar-inner">
-                            .sidebar-
+                            <div class="sidebar-search">
+                                <form action="#" class="sidebar-search__form">
+                                    <div class="row">
+                                        <div class="block">
+                                            <input type="text" name="search" id="search">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="sidebar-categories">
+                                <h3 class="sidebar-categories__title sidebar-title">
+                                    Categories
+                                </h3>
+                                <ul class="sidebar-categories__list">
+                                    <li class="sidebar-categories__list-item sidebar-categories__item">
+                                        <a href="#">
+                                            <h4 class="sidebar-categories__item-name">
+                                                Crafts
+                                            </h4>
+                                            <div class="sidebar-categories__item-count">
+                                                2
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-categories__list-item sidebar-categories__item">
+                                        <a href="#">
+                                            <h4 class="sidebar-categories__item-name">
+                                                Design
+                                            </h4>
+                                            <div class="sidebar-categories__item-count">
+                                                8
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-categories__list-item sidebar-categories__item">
+                                        <a href="#">
+                                            <h4 class="sidebar-categories__item-name">
+                                                Handmade
+                                            </h4>
+                                            <div class="sidebar-categories__item-count">
+                                                7
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-categories__list-item sidebar-categories__item">
+                                        <a href="#">
+                                            <h4 class="sidebar-categories__item-name">
+                                                Interior
+                                            </h4>
+                                            <div class="sidebar-categories__item-count">
+                                                1
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-categories__list-item sidebar-categories__item">
+                                        <a href="#">
+                                            <h4 class="sidebar-categories__item-name">
+                                                Wood
+                                            </h4>
+                                            <div class="sidebar-categories__item-count">
+                                                6
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="sidebar-recent">
+                                <h3 class="sidebar-recent__title sidebar-title">
+                                    Recent Posts
+                                </h3>
+                                <ul class="sidebar-recent__list">
+                                    <li class="sidebar-recent__list-item sidebar-recent__item">
+                                        <div class="sidebar-recent__item-image">
+                                            <a href="#" class="ibg">
+                                                <img src="img/blog/item4.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="sidebar-recent__item-content">
+                                            <h4 class="sidebar-recent__item-heading">
+                                                Going all-in with millennial design
+                                            </h4>
+                                            <div class="sidebar-recent__item-date">
+                                                <a href="#">03 Aug 2022</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="sidebar-recent__list-item sidebar-recent__item">
+                                        <div class="sidebar-recent__item-image">
+                                            <a href="#" class="ibg">
+                                                <img src="img/blog/item5.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="sidebar-recent__item-content">
+                                            <h4 class="sidebar-recent__item-heading">
+                                                Exploring new ways of decorating
+                                            </h4>
+                                            <div class="sidebar-recent__item-date">
+                                                <a href="#">03 Aug 2022</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="sidebar-recent__list-item sidebar-recent__item">
+                                        <div class="sidebar-recent__item-image">
+                                            <a href="#" class="ibg">
+                                                <img src="img/blog/item6.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="sidebar-recent__item-content">
+                                            <h4 class="sidebar-recent__item-heading">
+                                                Handmade pieces that took time to make
+                                            </h4>
+                                            <div class="sidebar-recent__item-date">
+                                                <a href="#">03 Aug 2022</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="sidebar-recent__list-item sidebar-recent__item">
+                                        <div class="sidebar-recent__item-image">
+                                            <a href="#" class="ibg">
+                                                <img src="img/blog/item7.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="sidebar-recent__item-content">
+                                            <h4 class="sidebar-recent__item-heading">
+                                                Modern home in Milan
+                                            </h4>
+                                            <div class="sidebar-recent__item-date">
+                                                <a href="#">03 Aug 2022</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="sidebar-recent__list-item sidebar-recent__item">
+                                        <div class="sidebar-recent__item-image">
+                                            <a href="#" class="ibg">
+                                                <img src="img/blog/item8.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="sidebar-recent__item-content">
+                                            <h4 class="sidebar-recent__item-heading">
+                                                Colorful office redesign
+                                            </h4>
+                                            <div class="sidebar-recent__item-date">
+                                                <a href="#">
+                                                    03 Aug 2022
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </aside>
+                </div>
+                <div class="blog-inner__pagination blog-pagination big">
+                    <ul class="blog-pagination__list">
+                        <li class="blog-pagination__item">
+                            <a href="#">1</a>
+                        </li>
+                        <li class="blog-pagination__item">
+                            <a href="#">2</a>
+                        </li>
+                        <li class="blog-pagination__item">
+                            <a href="#">3</a>
+                        </li>
+                        <li class="blog-pagination__item">
+                            <a href="#">Next</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <section class="charge">

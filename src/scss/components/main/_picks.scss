@@ -46,7 +46,7 @@
 
     &__button-wrapper {
         text-align: center;
-        margin: -15px;
+        margin: -15px 0;
     }
 
     &__button {
@@ -57,7 +57,7 @@
         font-weight: 500;
         line-height: normal;
         text-decoration: none;
-        padding: 15px;
+        padding: 15px 0;
         transition: transform 0.3s ease 0s;
 
         @media (max-width: $break_992) {

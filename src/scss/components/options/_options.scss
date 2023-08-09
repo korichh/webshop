@@ -67,19 +67,36 @@ body {
     justify-content: space-between;
 
     padding-top: 100px;
+    
+    @media (max-width: $break_992) {
+        padding-top: 80px;
+    }
+    
+    @media (max-width: $break_768) {
+        padding-top: 50px;
+        flex-direction: column;
+    }
 
     .main-content {
-        border: 1px solid #000;
         flex: 0 1 70%;
-        
         margin-right: 30px;
+
+        @media (max-width: $break_768) {
+            flex: unset;
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
     }
     .main-sidebar {
-        border: 1px solid #000;
-        flex: 0 1 30%;
-        
-        max-width: 300px;
-        width: 100%;
+        flex: 0 1 300px;
+
+        @media (max-width: $break_992) {
+            flex: 0 1 250px;
+        }
+
+        @media (max-width: $break_768) {
+            flex: unset;
+        }
     }
 }
 

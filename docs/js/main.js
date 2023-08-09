@@ -9,6 +9,7 @@ const main_init = function() {
     const itemView = document.querySelector('.item-view');
     const itemAbout = document.querySelector('.item-about');
     const itemFeature = document.querySelector('.item-feature');
+    const blogSidebar = document.querySelector('.blog-sidebar');
 
     if (ibg.length > 0) {
         for (let i = 0; i < ibg.length; i++) {
@@ -325,5 +326,11 @@ const main_init = function() {
         for (const link of links) {
             link.addEventListener('click', changeSection)
         }
+    }
+
+    if (blogSidebar) {
+        const sidebar = new StickySidebar(blogSidebar, {
+            sidebarInner: '.sidebar-inner',
+        })
     }
 }();
