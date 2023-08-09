@@ -150,10 +150,6 @@
         width: 30px;
         pointer-events: none;
         display: block;
-
-        @media (max-width: $break_480) {
-            width: 25px;
-        }
     }
 
     .menu-item {
