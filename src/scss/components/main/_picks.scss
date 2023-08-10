@@ -1,0 +1,203 @@
+/*=============== Picks ====================================================================================================================================================================*/
+
+.picks {
+    background-color: #fff;
+}
+.picks-wrapper {
+    padding: 50px 0 70px 0;
+
+    @media (max-width: $break_768) {
+        padding: 50px 0 50px 0;
+    }
+}
+.picks-inner {
+    // .picks-inner__title
+
+    &__title {
+        text-align: center;
+        color: #000;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 10px;
+
+        @media (max-width: $break_768) {
+            font-size: 30px;
+        }
+    }
+
+    // .picks-inner__text
+
+    &__text {
+        text-align: center;
+        color: #9f9f9f;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 100px;
+
+        @media (max-width: $break_768) {
+            font-size: 14px;
+            margin-bottom: 60px;
+        }
+    }
+
+    // .picks-inner__button-wrapper
+
+    &__button-wrapper {
+        text-align: center;
+        margin: -15px 0;
+    }
+
+    &__button {
+        position: relative;
+        display: inline-block;
+        color: #000;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: normal;
+        text-decoration: none;
+        padding: 15px 0;
+        transition: transform 0.3s ease 0s;
+
+        @media (max-width: $break_992) {
+            font-size: 22px;
+        }
+        @media (max-width: $break_768) {
+            font-size: 20px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #000;
+            pointer-events: none;
+            transition: width 0.3s ease 0s;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+            &:before {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+.picks-list {
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin: -30px;
+    margin-bottom: 40px;
+
+    @media (max-width: $break_768) {
+        margin-bottom: 20px;
+    }
+}
+.picks-item {
+    list-style-type: none;
+    flex: 0 1 25%;
+
+    @media (max-width: $break_992) {
+        flex: 0 1 33.333%;
+    }
+
+    @media (max-width: $break_768) {
+        flex: 0 1 50%;
+    }
+
+    @media (max-width: $break_600) {
+        flex: 0 1 100%;
+    }
+
+    padding: 30px;
+
+    // .picks-item__wrapper
+
+    &__wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .picks-item__image
+
+    &__image {
+        flex: 1 1 auto;
+        align-self: center;
+        margin-bottom: 10px;
+        img {
+            display: block;
+            max-width: 250px;
+            width: 100%;
+            max-height: 180px;
+            transition: transform 0.3s ease 0s;
+
+            @media (max-width: $break_992) {
+                max-width: 100%;
+                max-height: 200px;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+        &:active {
+            img {
+                transform: scale(0.95);
+            }
+        }
+    }
+
+    // .picks-item__heading
+
+    &__heading {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #000;
+            transition:
+                color 0.3s ease 0s,
+                transform 0.3s ease 0s;
+
+            &:hover {
+                transform: translateY(-2px);
+                color: #ffb133;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+
+    // .picks-item__text
+
+    &__text {
+        color: #000;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
+/*=============== /Picks ====================================================================================================================================================================*/

@@ -1,0 +1,121 @@
+/*=============== inst ====================================================================================================================================================================*/
+
+.inst {
+}
+.inst-wrapper {
+    position: relative;
+    padding: 120px 0;
+    @media (max-width: $break_992) {
+        padding: 80px 0;
+    }
+    @media (max-width: $break_768) {
+        padding: 60px 0;
+    }
+    @media (max-width: $break_600) {
+        padding: 50px 0;
+    }
+}
+.inst-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-position: right center;
+}
+.inst-inner {
+    // .inst-inner__title
+
+    &__title {
+        text-align: center;
+        color: #000;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: normal;
+
+        @media (max-width: $break_992) {
+            font-size: 45px;
+        }
+        @media (max-width: $break_768) {
+            font-size: 38px;
+        }
+        @media (max-width: $break_600) {
+            font-size: 32px;
+        }
+    }
+
+    // .inst-inner__text
+
+    &__text {
+        text-align: center;
+        color: #000;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 18px;
+        @media (max-width: $break_992) {
+            font-size: 18px;
+        }
+        @media (max-width: $break_768) {
+            font-size: 16px;
+        }
+        @media (max-width: $break_600) {
+            font-size: 14px;
+        }
+    }
+
+    // .inst-inner__button-wrapper
+
+    &__button-wrapper {
+        text-align: center;
+    }
+
+    // .inst-inner__button
+
+    &__button {
+        color: #000;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: normal;
+
+        display: inline-block;
+        max-width: 255px;
+        padding: 17px;
+        width: 100%;
+        text-decoration: none;
+        border-radius: 50px;
+        background: #faf4f4;
+        box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+
+        @media (max-width: $break_992) {
+            padding: 15px;
+            max-width: 220px;
+        }
+
+        @media (max-width: $break_768) {
+            padding: 12px;
+            max-width: 200px;
+            font-size: 18px;
+        }
+
+        @media (max-width: $break_600) {
+            padding: 8px;
+            font-size: 16px;
+            max-width: 180px;
+        }
+
+        transition: transform 0.3s ease 0s, box-shadow 0.3s ease 0s;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.3);
+        }
+        &:active {
+            transform: translateY(2px);
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.4);
+        }
+    }
+}
+
+/*=============== /inst ====================================================================================================================================================================*/

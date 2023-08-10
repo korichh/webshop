@@ -4,50 +4,635 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Webshop</title>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/options.css">
     <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/common.css">
+
     <link rel="stylesheet" href="css/main.css">
 
+    <link rel="stylesheet" href="css/shop.css">
+
+    <link rel="stylesheet" href="css/product.css">
+
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link rel="stylesheet" href="css/checkout.css">
+
+    <link rel="stylesheet" href="css/cart.css">
+
+    <link rel="stylesheet" href="css/contact.css">
+
+    <link rel="stylesheet" href="css/blog.css">
+
+    <link rel="stylesheet" href="css/about.css">
+
+    <link rel="stylesheet" href="css/post.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script defer src="js/StickySidebar.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 
 <body>
     <div class="page">
         <header class="header">
-            <div class="header-bar"></div>
             <div class="container">
                 <div class="header-inner">
-                    <div class="header-inner__logo header-logo">
-                        <a href="#">
-                            #logo
+                    <div class="header-inner__logo">
+                        <a href="index.html">
+                            <img src="img/logo.png" alt="">
                         </a>
                     </div>
                     <nav class="header-inner__nav header-nav">
-                        <ul class="menu">
+                        <ul class="menu menu-pages">
                             <li class="menu-item">
-                                <a href="#">Point 1</a>
+                                <a href="index.html">Home</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#">Point 2</a>
+                                <a href="shop.html">Shop</a>
                             </li>
                             <li class="menu-item">
-                                <a href="#">Point 3</a>
+                                <a href="about.html">About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="blog.html">Blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="contact.html">Contact</a>
                             </li>
                         </ul>
                     </nav>
-                    <button class="header-inner__burger header-burger">
-                        <span></span>
-                    </button>
+                    <div class="header-inner__nav header-nav">
+                        <ul class="menu menu-icons">
+                            <li class="menu-item">
+                                <a href="#profile">
+                                    <img src="./img/account.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#search">
+                                    <img src="./img/search.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#favorite">
+                                    <img src="./img/favorite.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#cart">
+                                    <img src="./img/cart.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <nav class="header-inner__nav mobile-nav">
+                        <ul class="menu menu-icons">
+                            <li class="menu-item">
+                                <a href="#menu">
+                                    <img src="./img/menu.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#profile">
+                                    <img src="./img/account.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#search">
+                                    <img src="./img/search.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#favorite">
+                                    <img src="./img/favorite.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#cart">
+                                    <img src="./img/cart.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header-inner__toolbar toolbar">
+                        <div class="toolbar-wrapper">
+                            <div class="toolbar-inner">
+                                <button class="toolbar-close">
+                                    <img src="img/close-toolbar.svg" alt="">
+                                </button>
+                                <div class="toolbar-section" data-id="#menu">
+                                    <h2 class="toolbar-section__heading">
+                                        Menu
+                                    </h2>
+                                    <div class="toolbar-section__inner">
+                                        <nav class="toolbar-section__nav">
+                                            <ul class="menu menu-pages">
+                                                <li class="menu-item">
+                                                    <a href="index.html">Home</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="shop.html">Shop</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="about.html">About</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="blog.html">Blog</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="contact.html">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="toolbar-section" data-id="#profile">
+                                    <h2 class="toolbar-section__heading">
+                                        Profile
+                                    </h2>
+                                    <div class="toolbar-section__inner">
+                                        <div class="toolbar-section__profile toolbar-profile">
+                                            <div class="toolbar-profile__button-wrapper">
+                                                <a href="profile.html" class="toolbar-profile__button">
+                                                    Go to profile
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="toolbar-section" data-id="#search">
+                                    <h2 class="toolbar-section__heading">
+                                        Search
+                                    </h2>
+                                </div>
+                                <div class="toolbar-section" data-id="#favorite">
+                                    <h2 class="toolbar-section__heading">
+                                        Favorites
+                                    </h2>
+                                </div>
+                                <div class="toolbar-section" data-id="#cart">
+                                    <h2 class="toolbar-section__heading">
+                                        Shopping Cart
+                                    </h2>
+                                    <div class="toolbar-section__inner">
+                                        <div class="toolbar-section__cart toolbar-cart">
+                                            <ul class="toolbar-cart__list">
+                                                <li class="toolbar-cart__item">
+                                                    <div class="toolbar-cart__item-image">
+                                                        <img src="img/item/item1.png" alt="">
+                                                    </div>
+                                                    <div class="toolbar-cart__item-content">
+                                                        <h4 class="toolbar-cart__item-heading">
+                                                            Asgaard sofa
+                                                        </h4>
+                                                        <div class="toolbar-cart__item-count">
+                                                            <span class="count">1</span>
+                                                            <span>X</span>
+                                                            <span class="price">Rs. 250,000.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <button class="toolbar-cart__item-delete">
+                                                        <img src="img/delete.svg" alt="">
+                                                    </button>
+                                                </li>
+                                                <li class="toolbar-cart__item">
+                                                    <div class="toolbar-cart__item-image">
+                                                        <img src="img/item/item2.png" alt="">
+                                                    </div>
+                                                    <div class="toolbar-cart__item-content">
+                                                        <h4 class="toolbar-cart__item-heading">
+                                                            Outdoor sofa set
+                                                        </h4>
+                                                        <div class="toolbar-cart__item-count">
+                                                            <span class="count">1</span>
+                                                            <span>X</span>
+                                                            <span class="price">Rs. 244,000.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <button class="toolbar-cart__item-delete">
+                                                        <img src="img/delete.svg" alt="">
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                            <div class="toolbar-cart__bottom">
+                                                <div class="toolbar-cart__total">
+                                                    <span>Subtotal</span>
+                                                    <span class="total">Rs. 494,000.00</span>
+                                                </div>
+                                                <div class="toolbar-cart__buttons">
+                                                    <div class="toolbar-cart__button-wrapper">
+                                                        <a href="cart.html" class="toolbar-cart__button">
+                                                            View Cart
+                                                        </a>
+                                                    </div>
+                                                    <div class="toolbar-cart__button-wrapper">
+                                                        <a href="checkout.html" class="toolbar-cart__button">
+                                                            Checkout
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
         <main class="main">
-
+            <section class="hero">
+                <div class="hero-wrapper">
+                    <div class="hero-swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-bg ibg">
+                                        <img src="./img/main/main.png" alt="">
+                                    </div>
+                                    <div class="container">
+                                        <div class="slide-inner">
+                                            <h2 class="slide-title">
+                                                Rocket single seater
+                                            </h2>
+                                            <div class="slide-button-wrapper">
+                                                <a href="shop.html" class="slide-button">
+                                                    Shop Now
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide">
+                                <div class="slide-wrapper">
+                                    <div class="slide-bg ibg">
+                                        <img src="./img/main/main.png" alt="">
+                                    </div>
+                                    <div class="container">
+                                        <div class="slide-inner">
+                                            <h2 class="slide-title">
+                                                Rocket single seater another word to that
+                                            </h2>
+                                            <div class="slide-button-wrapper">
+                                                <a href="shop.html" class="slide-button">
+                                                    Shop Now
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="offer">
+                <div class="offer-wrapper">
+                    <div class="container">
+                        <div class="offer-inner">
+                            <ul class="offer-inner__list offer-list">
+                                <li class="offer-list__item offer-item">
+                                    <div class="offer-item__wrapper">
+                                        <div class="offer-item__image">
+                                            <img src="./img/offer/item1.png" alt="">
+                                        </div>
+                                        <h3 class="offer-item__heading">
+                                            Side table
+                                        </h3>
+                                        <div class="offer-item__button-wrapper">
+                                            <a href="shop.html" class="offer-item__button">
+                                                View More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="offer-list__item offer-item">
+                                    <div class="offer-item__wrapper">
+                                        <div class="offer-item__image">
+                                            <img src="./img/offer/item2.png" alt="">
+                                        </div>
+                                        <h3 class="offer-item__heading">
+                                            Double sofa
+                                        </h3>
+                                        <div class="offer-item__button-wrapper">
+                                            <a href="shop.html" class="offer-item__button">
+                                                View More
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="picks">
+                <div class="picks-wrapper">
+                    <div class="container">
+                        <div class="picks-inner">
+                            <h2 class="picks-inner__title">
+                                Top Picks For You
+                            </h2>
+                            <div class="picks-inner__text">
+                                <p>Find a bright ideal to suit your taste with our great selection of suspension, floor and table lights.</p>
+                            </div>
+                            <ul class="picks-inner__list picks-list">
+                                <li class="picks-list__item picks-item">
+                                    <div class="picks-item__wrapper">
+                                        <div class="picks-item__image">
+                                            <a href="product.html">
+                                                <img src="./img/picks/item1.png" alt="">
+                                            </a>
+                                        </div>
+                                        <h4 class="picks-item__heading">
+                                            <a href="product.html">
+                                                Trenton modular sofa_3
+                                            </a>
+                                        </h4>
+                                        <div class="picks-item__text">
+                                            <p>Rs. 25,000.00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="picks-list__item picks-item">
+                                    <div class="picks-item__wrapper">
+                                        <div class="picks-item__image">
+                                            <a href="product.html">
+                                                <img src="./img/picks/item2.png" alt="">
+                                            </a>
+                                        </div>
+                                        <h4 class="picks-item__heading">
+                                            <a href="product.html">
+                                                Granite dining table with dining chair
+                                            </a>
+                                        </h4>
+                                        <div class="picks-item__text">
+                                            <p>Rs. 25,000.00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="picks-list__item picks-item">
+                                    <div class="picks-item__wrapper">
+                                        <div class="picks-item__image">
+                                            <a href="product.html">
+                                                <img src="./img/picks/item3.png" alt="">
+                                            </a>
+                                        </div>
+                                        <h4 class="picks-item__heading">
+                                            <a href="product.html">
+                                                Outdoor bar table and stool
+                                            </a>
+                                        </h4>
+                                        <div class="picks-item__text">
+                                            <p>Rs. 25,000.00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="picks-list__item picks-item">
+                                    <div class="picks-item__wrapper">
+                                        <div class="picks-item__image">
+                                            <a href="product.html">
+                                                <img src="./img/picks/item4.png" alt="">
+                                            </a>
+                                        </div>
+                                        <h4 class="picks-item__heading">
+                                            <a href="product.html">
+                                                Plain console with teak mirror
+                                            </a>
+                                        </h4>
+                                        <div class="picks-item__text">
+                                            <p>Rs. 25,000.00</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="picks-inner__button-wrapper">
+                                <a href="shop.html" class="picks-inner__button">
+                                    View More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="arrivals">
+                <div class="arrivals-wrapper">
+                    <div class="arrivals-inner">
+                        <div class="arrivals-inner__image">
+                            <img src="img/arrivals/item.png" alt="">
+                        </div>
+                        <div class="arrivals-inner__content">
+                            <h4 class="arrivals-inner__title">
+                                New Arrivals
+                            </h4>
+                            <h2 class="arrivals-inner__heading">
+                                Asgaard sofa
+                            </h2>
+                            <div class="arrivals-inner__button-wrapper">
+                                <a href="product.html" class="arrivals-inner__button">
+                                    Order Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="blogs">
+                <div class="blogs-wrapper">
+                    <div class="container">
+                        <div class="blogs-inner">
+                            <h2 class="blogs-inner__title">
+                                Our Blogs
+                            </h2>
+                            <div class="blogs-inner__text">
+                                <p>Find a bright ideal to suit your taste with our great selection</p>
+                            </div>
+                            <ul class="blogs-inner__list blogs-list">
+                                <li class="blogs-list__item blogs-item">
+                                    <div class="blogs-item__image">
+                                        <a href="post.html" class="ibg">
+                                            <img src="img/blogs/item1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <h4 class="blogs-item__heading">
+                                        Going all-in with millennial design
+                                    </h4>
+                                    <div class="blogs-item__button-wrapper">
+                                        <a href="post.html" class="blogs-item__button">
+                                            Read More
+                                        </a>
+                                    </div>
+                                    <div class="blogs-item__description">
+                                        <span>
+                                            <img src="img/time.svg" alt="">
+                                            5 min
+                                        </span>
+                                        <span>
+                                            <img src="img/date.svg" alt="">
+                                            12th Oct 2022
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="blogs-list__item blogs-item">
+                                    <div class="blogs-item__image">
+                                        <a href="post.html" class="ibg">
+                                            <img src="img/blogs/item2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <h4 class="blogs-item__heading">
+                                        Going all-in with millennial design
+                                    </h4>
+                                    <div class="blogs-item__button-wrapper">
+                                        <a href="post.html" class="blogs-item__button">
+                                            Read More
+                                        </a>
+                                    </div>
+                                    <div class="blogs-item__description">
+                                        <span>
+                                            <img src="img/time.svg" alt="">
+                                            5 min
+                                        </span>
+                                        <span>
+                                            <img src="img/date.svg" alt="">
+                                            12th Oct 2022
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="blogs-list__item blogs-item">
+                                    <div class="blogs-item__image">
+                                        <a href="post.html" class="ibg">
+                                            <img src="img/blogs/item3.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <h4 class="blogs-item__heading">
+                                        Going all-in with millennial design
+                                    </h4>
+                                    <div class="blogs-item__button-wrapper">
+                                        <a href="post.html" class="blogs-item__button">
+                                            Read More
+                                        </a>
+                                    </div>
+                                    <div class="blogs-item__description">
+                                        <span>
+                                            <img src="img/time.svg" alt="">
+                                            5 min
+                                        </span>
+                                        <span>
+                                            <img src="img/date.svg" alt="">
+                                            12th Oct 2022
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="blogs-inner__button-wrapper">
+                                <a href="blog.html" class="blogs-inner__button">
+                                    View All Post
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="inst">
+                <div class="inst-wrapper">
+                    <div class="inst-bg ibg">
+                        <img src="img/inst/bg.png" alt="">
+                    </div>
+                    <div class="container">
+                        <div class="inst-inner">
+                            <h2 class="inst-inner__title">
+                                Our Instagram
+                            </h2>
+                            <div class="inst-inner__text">
+                                <p>Follow our store on Instagram</p>
+                            </div>
+                            <div class="inst-inner__button-wrapper">
+                                <a href="#" class="inst-inner__button">
+                                    Follow Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <footer class="footer">
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="footer-inner">
+                        <div class="footer-inner__bar">
+                            <div class="footer-inner__address">
+                                <a href="index.html" class="logo">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                                <p>400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
+                            </div>
+                            <div class="footer-inner__columns">
+                                <div class="footer-inner__column footer-column">
+                                    <h4 class="footer-column__heading">
+                                        Links
+                                    </h4>
+                                    <ul class="footer-column__list footer-list">
+                                        <li class="footer-list__item">
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="shop.html">Shop</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="about.html">About</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="blog.html">Blog</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="contact.html">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer-inner__column footer-column">
+                                    <h4 class="footer-column__heading">
+                                        Help
+                                    </h4>
+                                    <ul class="footer-column__list footer-list">
+                                        <li class="footer-list__item">
+                                            <a href="#">Payment Options</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="#">Returns</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="#">Privacy Policies</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer-inner__column footer-column">
+                                    <h4 class="footer-column__heading">
+                                        Newsletter
+                                    </h4>
+                                    <form class="footer-column__form footer-form" action="#" method="post">
+                                        <div class="footer-form__row">
+                                            <input type="email" name="email" placeholder="Enter Your Email Address" id="footer-form__email">
+                                            <input type="submit" value="SUBSCRIBE">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-inner__copyright">
+                            <p>2022 Meubel House. All rights reverved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

@@ -1,0 +1,109 @@
+/*=============== Fonts ====================================================================================================================================================================*/
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/poppins-v20-latin-300.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/poppins-v20-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/poppins-v20-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/poppins-v20-latin-600.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/poppins-v20-latin-700.woff2") format("woff2");
+}
+
+/*=============== /Fonts ====================================================================================================================================================================*/
+
+/*=============== Options ====================================================================================================================================================================*/
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.page {
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 80px;
+    
+    @media (max-width: $break_992) {
+        padding-top: 60px;
+    }
+    
+    @media (max-width: $break_768) {
+        padding-top: 40px;
+        flex-direction: column;
+    }
+
+    .main-content {
+        flex: 0 1 70%;
+        margin-right: 30px;
+
+        @media (max-width: $break_768) {
+            flex: unset;
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+    }
+    .main-sidebar {
+        flex: 0 1 300px;
+
+        @media (max-width: $break_992) {
+            flex: 0 1 250px;
+        }
+
+        @media (max-width: $break_768) {
+            flex: unset;
+        }
+    }
+}
+
+.container {
+    max-width: $maxWidthContainer + 2 * $padding + px;
+    margin: 0 auto;
+    padding: 0 $padding + px;
+}
+
+/*=============== /Options ====================================================================================================================================================================*/

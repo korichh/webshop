@@ -1,0 +1,81 @@
+/*=============== Post-header ====================================================================================================================================================================*/
+
+.post-header {
+    background-color: #fff;
+    // .post-header__wrapper
+
+    &__wrapper {
+        padding-top: 140px;
+
+        @media (max-width: $break_992) {
+            padding-top: 60px;
+        }
+
+        @media (max-width: $break_768) {
+            padding-top: 40px;
+        }
+    }
+
+    // .post-header__inner
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    // .post-header__title
+
+    &__title {
+        color: #000;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: normal;
+
+        @media (max-width: $break_992) {
+            font-size: 36px;
+        }
+
+        @media (max-width: $break_768) {
+            font-size: 30px;
+        }
+    }
+
+    // .post-header__breadcrumbs
+
+    &__breadcrumbs {
+        a {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: normal;
+
+            transition: color 0.3s ease 0s;
+
+            &:after {
+                content: ">";
+                font-size: 30px;
+                margin: 2px 5px 0 5px;
+                font-weight: 400;
+            }
+
+            &:hover {
+                color: #c67a00;
+            }
+        }
+
+        span {
+            color: #000;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: normal;
+        }
+    }
+}
+
+/*=============== /Post-header ====================================================================================================================================================================*/

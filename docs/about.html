@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webshop</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/options.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/common.css">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/shop.css">
+
+    <link rel="stylesheet" href="css/product.css">
+
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link rel="stylesheet" href="css/checkout.css">
+
+    <link rel="stylesheet" href="css/cart.css">
+
+    <link rel="stylesheet" href="css/contact.css">
+
+    <link rel="stylesheet" href="css/blog.css">
+
+    <link rel="stylesheet" href="css/about.css">
+
+    <link rel="stylesheet" href="css/post.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script defer src="js/StickySidebar.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="container">
+                <div class="header-inner">
+                    <div class="header-inner__logo">
+                        <a href="index.html">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                    <nav class="header-inner__nav header-nav">
+                        <ul class="menu menu-pages">
+                            <li class="menu-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="shop.html">Shop</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="about.html">About</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="blog.html">Blog</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header-inner__nav header-nav">
+                        <ul class="menu menu-icons">
+                            <li class="menu-item">
+                                <a href="#profile">
+                                    <img src="./img/account.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#search">
+                                    <img src="./img/search.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#favorite">
+                                    <img src="./img/favorite.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#cart">
+                                    <img src="./img/cart.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <nav class="header-inner__nav mobile-nav">
+                        <ul class="menu menu-icons">
+                            <li class="menu-item">
+                                <a href="#menu">
+                                    <img src="./img/menu.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#profile">
+                                    <img src="./img/account.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#search">
+                                    <img src="./img/search.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#favorite">
+                                    <img src="./img/favorite.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#cart">
+                                    <img src="./img/cart.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header-inner__toolbar toolbar">
+                        <div class="toolbar-wrapper">
+                            <div class="toolbar-inner">
+                                <button class="toolbar-close">
+                                    <img src="img/close-toolbar.svg" alt="">
+                                </button>
+                                <div class="toolbar-section" data-id="#menu">
+                                    <h2 class="toolbar-section__heading">
+                                        Menu
+                                    </h2>
+                                    <div class="toolbar-section__inner">
+                                        <nav class="toolbar-section__nav">
+                                            <ul class="menu menu-pages">
+                                                <li class="menu-item">
+                                                    <a href="index.html">Home</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="shop.html">Shop</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="about.html">About</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="blog.html">Blog</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="contact.html">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="toolbar-section" data-id="#profile">
+                                    <h2 class="toolbar-section__heading">
+                                        Profile
+                                    </h2>
+                                    <div class="toolbar-section__inner">
+                                        <div class="toolbar-section__profile toolbar-profile">
+                                            <div class="toolbar-profile__button-wrapper">
+                                                <a href="profile.html" class="toolbar-profile__button">
+                                                    Go to profile
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="toolbar-section" data-id="#search">
+                                    <h2 class="toolbar-section__heading">
+                                        Search
+                                    </h2>
+                                </div>
+                                <div class="toolbar-section" data-id="#favorite">
+                                    <h2 class="toolbar-section__heading">
+                                        Favorites
+                                    </h2>
+                                </div>
+                                <div class="toolbar-section" data-id="#cart">
+                                    <h2 class="toolbar-section__heading">
+                                        Shopping Cart
+                                    </h2>
+                                    <div class="toolbar-section__inner">
+                                        <div class="toolbar-section__cart toolbar-cart">
+                                            <ul class="toolbar-cart__list">
+                                                <li class="toolbar-cart__item">
+                                                    <div class="toolbar-cart__item-image">
+                                                        <img src="img/item/item1.png" alt="">
+                                                    </div>
+                                                    <div class="toolbar-cart__item-content">
+                                                        <h4 class="toolbar-cart__item-heading">
+                                                            Asgaard sofa
+                                                        </h4>
+                                                        <div class="toolbar-cart__item-count">
+                                                            <span class="count">1</span>
+                                                            <span>X</span>
+                                                            <span class="price">Rs. 250,000.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <button class="toolbar-cart__item-delete">
+                                                        <img src="img/delete.svg" alt="">
+                                                    </button>
+                                                </li>
+                                                <li class="toolbar-cart__item">
+                                                    <div class="toolbar-cart__item-image">
+                                                        <img src="img/item/item2.png" alt="">
+                                                    </div>
+                                                    <div class="toolbar-cart__item-content">
+                                                        <h4 class="toolbar-cart__item-heading">
+                                                            Outdoor sofa set
+                                                        </h4>
+                                                        <div class="toolbar-cart__item-count">
+                                                            <span class="count">1</span>
+                                                            <span>X</span>
+                                                            <span class="price">Rs. 244,000.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <button class="toolbar-cart__item-delete">
+                                                        <img src="img/delete.svg" alt="">
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                            <div class="toolbar-cart__bottom">
+                                                <div class="toolbar-cart__total">
+                                                    <span>Subtotal</span>
+                                                    <span class="total">Rs. 494,000.00</span>
+                                                </div>
+                                                <div class="toolbar-cart__buttons">
+                                                    <div class="toolbar-cart__button-wrapper">
+                                                        <a href="cart.html" class="toolbar-cart__button">
+                                                            View Cart
+                                                        </a>
+                                                    </div>
+                                                    <div class="toolbar-cart__button-wrapper">
+                                                        <a href="checkout.html" class="toolbar-cart__button">
+                                                            Checkout
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="banner">
+                <div class="banner-wrapper">
+                    <div class="banner-bg ibg">
+                        <img src="img/banner/item1.jpg" alt="">
+                    </div>
+                    <div class="container">
+                        <div class="banner-inner">
+                            <div class="banner-inner__logo">
+                                <img src="img/logo.png" alt="">
+                            </div>
+                            <h1 class="banner-inner__title">
+                                About
+                            </h1>
+                            <div class="banner-inner__breadcrumbs banner-breadcrumbs">
+                                <a href="index.html">Home</a> <span>About</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about">
+                <div class="about-wrapper">
+                    <div class="container">
+                        <div class="about-inner">
+                            <div class="about-inner__content about-content">
+                                <p>
+                                    Meubel House was founded on the simple idea of bringing sustainably sourced,
+                                    meticulously crafted, impeccably designed, and built-to-last luxury furniture to your
+                                    home. At Meubel House, we believe in designing and crafting intuitively iconic pieces of furniture that exude luxury elegance and effortless comfort. We conceptualize and design every piece to be rich in detail, high in comfort, and best in functionality. From visual interest to texture, to shape to the minute tailored details, we meticulously craft our collection of living, dining, and outdoor furniture to become a point of pride at your home.
+                                </p>
+                                <p>
+                                    At the heart of Meubel House is our dedicated and skilled team of artisans and
+                                    craftsmen that we have carefully chosen to work with us and their deep appreciation for the maker’s touch. And we go the extra mile to achieve excellence, thanks to their craftsmanship and several decades of experience behind them.
+                                    With hand-selection of premium materials considering their texture, uniqueness,
+                                    and longevity, coupled with a thoughtful selection of tones and designs, we ensure the quality of our pieces is bespoke without forgetting to highlight the inherent
+                                    beauty of materials.
+                                </p>
+                                <p>
+                                    Further, our founders’ passion for environment and adventure takes them across
+                                    Asia to handpick unique pieces in the most unexpected places. From vintage markets to mountainous villages, nowhere is off-limits for finding pieces of furniture that align with Meubel House’s standards.
+                                </p>
+                                <p>
+                                    Bringing that impeccable sense of style and design to your purchase experience, we are situated in a secluded yet stunning location, surrounded by the tranquility of lush green nature in the quietness of Gower Street in the heart of Colombo. Our
+                                    showroom is stylishly designed to browse our collections of living, dining, and
+                                    outdoor furniture, and accessories, while experiencing homely luxury.
+                                    The blissful quietness of the surroundings, calming sight of lush greens, and the
+                                    heavenly coziness of our stylish furniture, complemented by our friendly staff, who
+                                    will assist you with choosing, purchasing, and delivering, is a comforting experience in itself.
+                                </p>
+                                <p>And we invite you to walk into our sanctuary of design and craftsmanship to discover furniture that will make your house feel like home.</p>
+                            </div>
+                            <div class="about-inner__address about-address">
+                                <ul class="about-address__list">
+                                    <li class="about-address__item about-item">
+                                        <div class="about-item__image">
+                                            <img src="img/map.svg" alt="">
+                                        </div>
+                                        <div class="about-item__content">
+                                            <h4 class="about-item__heading">
+                                                Address
+                                            </h4>
+                                            <div class="about-item__text">
+                                                <p>236 5th SE Avenue, New York NY10000, United States</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="about-address__item about-item">
+                                        <div class="about-item__image">
+                                            <img src="img/tel.svg" alt="">
+                                        </div>
+                                        <div class="about-item__content">
+                                            <h4 class="about-item__heading">
+                                                Phone
+                                            </h4>
+                                            <div class="about-item__text">
+                                                <p>Mobile: <a href="tel:+845466789">+(84) 546-6789</a></p>
+                                                <p>Hotline: <a href="tel:+844566789">+(84) 456-6789</a></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="about-address__item about-item">
+                                        <div class="about-item__image">
+                                            <img src="img/clock.svg" alt="">
+                                        </div>
+                                        <div class="about-item__content">
+                                            <h4 class="about-item__heading">
+                                                Working Time
+                                            </h4>
+                                            <div class="about-item__text">
+                                                <p>Monday-Friday: 9:00 - 22:00</p>
+                                                <p>Saturday-Sunday: 9:00 - 21:00</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="arrivals">
+                <div class="arrivals-wrapper">
+                    <div class="arrivals-inner">
+                        <div class="arrivals-inner__image">
+                            <img src="img/arrivals/item.png" alt="">
+                        </div>
+                        <div class="arrivals-inner__content">
+                            <h4 class="arrivals-inner__title">
+                                New Arrivals
+                            </h4>
+                            <h2 class="arrivals-inner__heading">
+                                Asgaard sofa
+                            </h2>
+                            <div class="arrivals-inner__button-wrapper">
+                                <a href="product.html" class="arrivals-inner__button">
+                                    Order Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="footer-inner">
+                        <div class="footer-inner__bar">
+                            <div class="footer-inner__address">
+                                <a href="index.html" class="logo">
+                                    <img src="img/logo.png" alt="">
+                                </a>
+                                <p>400 University Drive Suite 200 Coral Gables, FL 33134 USA</p>
+                            </div>
+                            <div class="footer-inner__columns">
+                                <div class="footer-inner__column footer-column">
+                                    <h4 class="footer-column__heading">
+                                        Links
+                                    </h4>
+                                    <ul class="footer-column__list footer-list">
+                                        <li class="footer-list__item">
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="shop.html">Shop</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="about.html">About</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="blog.html">Blog</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="contact.html">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer-inner__column footer-column">
+                                    <h4 class="footer-column__heading">
+                                        Help
+                                    </h4>
+                                    <ul class="footer-column__list footer-list">
+                                        <li class="footer-list__item">
+                                            <a href="#">Payment Options</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="#">Returns</a>
+                                        </li>
+                                        <li class="footer-list__item">
+                                            <a href="#">Privacy Policies</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer-inner__column footer-column">
+                                    <h4 class="footer-column__heading">
+                                        Newsletter
+                                    </h4>
+                                    <form class="footer-column__form footer-form" action="#" method="post">
+                                        <div class="footer-form__row">
+                                            <input type="email" name="email" placeholder="Enter Your Email Address" id="footer-form__email">
+                                            <input type="submit" value="SUBSCRIBE">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-inner__copyright">
+                            <p>2022 Meubel House. All rights reverved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
