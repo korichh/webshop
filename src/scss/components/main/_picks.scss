@@ -139,12 +139,27 @@
         align-self: center;
         margin-bottom: 10px;
         img {
+            display: block;
             max-width: 250px;
             width: 100%;
             max-height: 180px;
+            transition: transform 0.3s ease 0s;
+
             @media (max-width: $break_992) {
                 max-width: 100%;
                 max-height: 200px;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+
+        &:active {
+            img {
+                transform: scale(0.95);
             }
         }
     }
@@ -152,10 +167,27 @@
     // .picks-item__heading
 
     &__heading {
-        color: #000;
         font-size: 16px;
         font-weight: 400;
         line-height: normal;
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #000;
+            transition:
+                color 0.3s ease 0s,
+                transform 0.3s ease 0s;
+
+            &:hover {
+                transform: translateY(-2px);
+                color: #ffb133;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
     }
 
     // .picks-item__text
