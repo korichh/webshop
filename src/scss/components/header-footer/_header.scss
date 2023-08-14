@@ -135,6 +135,33 @@
         a {
             display: inline-block;
             text-decoration: none;
+            position: relative;
+        }
+    }
+}
+
+.menu-icons {
+    a {
+        position: relative;
+    }
+    .count {
+        width: 18px;
+        height: 18px;
+        background-color: red;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 12px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease 0s;
+        &._active {
+            opacity: 1;
         }
     }
 }
