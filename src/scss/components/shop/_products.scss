@@ -507,6 +507,53 @@
         flex-direction: column;
         text-decoration: none;
         justify-content: center;
+        position: relative;
+        overflow: hidden;
+
+        &:hover {
+            .products-item__favorite {
+                right: 10px;
+            }
+        }
+    }
+
+    &__favorite {
+        position: absolute;
+        top: 10px;
+        right: -40px;
+        z-index: 1;
+        width: 40px;
+
+        border: none;
+        background-color: transparent;
+        padding: 5px;
+        transition:
+            transform 0.3s ease 0s,
+            right 0.3s ease 0s;
+
+        @media (max-width: $break_992) {
+            right: 10px;
+        }
+
+        &:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        svg {
+            display: block;
+            fill: #fff;
+            transition: fill 0.3s ease 0s;
+        }
+
+        &._active {
+            svg {
+                fill: red;
+            }
+        }
     }
     // .products-item__image
 

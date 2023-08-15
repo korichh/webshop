@@ -35,6 +35,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script defer src="js/StickySidebar.js"></script>
     <script defer src="js/cart.js"></script>
+    <script defer src="js/wishlist.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 
@@ -81,12 +82,13 @@
                             </li>
                             <li class="menu-item">
                                 <a href="#favorite">
+                                    <div class="wish menu-item-count"></div>
                                     <img src="./img/favorite.svg" alt="">
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#cart">
-                                    <div class="count"></div>
+                                    <div class="count menu-item-count"></div>
                                     <img src="./img/cart.svg" alt="">
                                 </a>
                             </li>
@@ -111,12 +113,13 @@
                             </li>
                             <li class="menu-item">
                                 <a href="#favorite">
+                                    <div class="wish menu-item-count"></div>
                                     <img src="./img/favorite.svg" alt="">
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#cart">
-                                    <div class="count"></div>
+                                    <div class="count menu-item-count"></div>
                                     <img src="./img/cart.svg" alt="">
                                 </a>
                             </li>
@@ -175,8 +178,15 @@
                                 </div>
                                 <div class="toolbar-section" data-id="#favorite">
                                     <h2 class="toolbar-section__heading">
-                                        Favorites
+                                        Wishlist
                                     </h2>
+                                    <div class="toolbar-section__inner">
+                                        <div class="toolbar-section__wishlist toolbar-wishlist">
+                                            <ul class="toolbar-wishlist__list">
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="toolbar-section" data-id="#cart">
                                     <h2 class="toolbar-section__heading">
@@ -248,11 +258,11 @@
                                     <div class="item-about__heading">
                                         <h1>Asgaard sofa</h1>
                                         <input type="text" name="heading" value="Asgaard sofa" hidden>
-                                        <div class="favorite-button">
+                                        <button class="favorite-button">
                                             <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
-                                        </div>
+                                        </button>
                                     </div>
                                     <div class="item-about__price">
                                         <p>Rs. 250,000.00</p>
@@ -312,7 +322,6 @@
                                                 Add To Cart
                                             </button>
                                         </div>
-                                        <div class="switch">switch</div>
                                     </div>
                                     <table class="item-about__details item-details">
                                         <tr>

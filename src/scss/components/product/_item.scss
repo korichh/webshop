@@ -246,9 +246,6 @@
             }
         }
         .favorite-button {
-            user-select: none;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
             border: none;
             background-color: transparent;
             padding: 10px 5px 5px;
@@ -464,10 +461,6 @@
                 opacity: 0;
             }
         }
-    }
-    .switch {
-        user-select: none;
-        cursor: pointer;
     }
 
     // .item-about__details

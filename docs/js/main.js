@@ -271,30 +271,24 @@ const main_init = function() {
                 image.setAttribute('style', '');
                 wrapper.setAttribute('style', '');
             })
-        }
-        wrapper.addEventListener('wheel', (e) => {
-            e.preventDefault();
+            wrapper.addEventListener('wheel', (e) => {
+                e.preventDefault();
 
-            if (e.deltaY > 0) {
-                if (scale <= 1.2) scale = 1.2;
-                scale -= 0.15;
-            } else {
-                if (scale >= 5) scale = 5;
-                scale += 0.15;
-            }
-            imageScale(e);
-        })
+                if (e.deltaY > 0) {
+                    if (scale <= 1.2) scale = 1.2;
+                    scale -= 0.15;
+                } else {
+                    if (scale >= 5) scale = 5;
+                    scale += 0.15;
+                }
+                imageScale(e);
+            })
+        }
     }
 
     if (itemAbout) {
-        const favorite = itemAbout.querySelector('.favorite-button');
         const buttons = itemAbout.querySelectorAll('.count-button');
         const out = itemAbout.querySelector('.item-count .out');
-
-        const addFavorite = () => {
-            favorite.classList.toggle('_active');
-        }
-        favorite.addEventListener('click', addFavorite);
 
         const counter = (e) => {
             const button = e.target;

@@ -67,7 +67,7 @@ const cart_init = function() {
 
             item.remove();
             updateTotal(total);
-            updateCountIcon(header);
+            updateCountIcon();
             if (pageCart) updatePageCart();
             if (checkout) updateCheckoutCart();
         }
@@ -80,13 +80,13 @@ const cart_init = function() {
     const toolbarCartItemHTML = (item) => {
         return `
         <li class="toolbar-cart__item">
-            <div class="toolbar-cart__item-image">
+            <a href="product.html" class="toolbar-cart__item-image">
                 <img src="${item.image}" alt="${item.heading}">
-            </div>
+            </a>
             <div class="toolbar-cart__item-content">
-                <h4 class="toolbar-cart__item-heading">
+                <a href="product.html" class="toolbar-cart__item-heading">
                     ${item.heading}
-                </h4>
+                </a>
                 <div class="toolbar-cart__item-count">
                     <span class="count">${item.count}</span>
                     <span>X</span>
@@ -117,6 +117,12 @@ const cart_init = function() {
         }, 300);
     }
 
+    const closeToolbarWish = () => {
+        const wishSection = toolbar.querySelector('.toolbar-wishlist');
+        wishSection.classList.remove('_active');
+        toolbar.classList.remove('_active');
+    }
+
     const updatePageCart = () => {
         const list = pageCart.querySelector('.cart-table tbody');
         const subtotal = pageCart.querySelector('.subtotal');
@@ -139,7 +145,7 @@ const cart_init = function() {
             item.remove();
             updateTotal(subtotal);
             updateTotal(total);
-            updateCountIcon(header);
+            updateCountIcon();
             updateToolbarCart();
         }
         const buttons = list.querySelectorAll('.cart-item__remove button');
@@ -161,7 +167,7 @@ const cart_init = function() {
                 ${formatPrice(item.price)}
             </td>
             <td class="cart-item__quantity">
-                <input type="number" min="1" max="5" value="${item.count}">
+                ${item.count}
             </td>
             <td class="cart-item__subtotal">
                 ${formatPrice(item.subtotal)}
@@ -199,23 +205,15 @@ const cart_init = function() {
 
     if (pageCart) updatePageCart();
     if (checkout) updateCheckoutCart();
-    if (header && toolbar) updateToolbarCart();
+    if (toolbar) updateToolbarCart();
     updateCountIcon();
 
     if (itemForm && header && toolbar) {
-        // -----------------------------
-        const switchB = document.querySelector('.switch');
-        let toggler = true;
-
-        switchB.addEventListener('click', () => {
-            if (toggler) itemForm.querySelector('h1 + input').value = 'Maya sofa three seater', itemForm.querySelector('h1').innerHTML = 'Maya sofa three seater', itemForm.querySelector('.item-view__item img').setAttribute('src', 'img/products/product15.png'), itemForm.querySelector('.item-view__image img').setAttribute('src', 'img/products/product15.png'), itemForm.querySelector('.item-view__image input').value = 'img/products/product15.png', itemForm.querySelector('.item-about__price input').value = '115,000.00', itemForm.querySelector('.item-about__price p').innerHTML = 'Rs. 115,000.00', toggler = !toggler;
-            else itemForm.querySelector('h1 + input').value = 'Asgaard sofa', itemForm.querySelector('h1').innerHTML = 'Asgaard sofa', itemForm.querySelector('.item-view__item img').setAttribute('src', 'img/item/item1.png'), itemForm.querySelector('.item-view__image img').setAttribute('src', 'img/item/item1.png'), itemForm.querySelector('.item-view__image input').value = 'img/item/item1.png', itemForm.querySelector('.item-about__price input').value = '250,000.00', itemForm.querySelector('.item-about__price p').innerHTML = 'Rs. 250,000.00', toggler = !toggler;
-        })
-        // -----------------------------
-
-        const button = itemForm.querySelector('button');
+        const button = itemForm.querySelector('.item-about__button');
 
         const formSubmit = (e) => {
+            if (!e.submitter.classList.contains('item-about__button')) return;
+
             e.preventDefault();
             button.disabled = true;
 
@@ -248,5 +246,45 @@ const cart_init = function() {
 
         const formChange = () => button.disabled = false;
         itemForm.addEventListener('change', formChange)
+    }
+
+    if (toolbar) {
+        const addWishToCart = (e) => {
+            const wishlist = e.detail.wishlist;
+            const HTMLitem = e.detail.target.closest('.toolbar-wishlist__item');
+            const heading = HTMLitem.querySelector('.toolbar-wishlist__item-heading').innerHTML.trim();
+            let item = {};
+            let index = null;
+
+            for (const wishItem of wishlist) {
+                if (wishItem.heading === heading) {
+                    item = wishItem;
+                    break;
+                }
+            }
+            item.size = null;
+            item.color = null;
+            item.count = 1;
+            item.subtotal = item.price * item.count;
+
+            for (const i of cart.items.keys()) {
+                if (cart.items[i].heading === item.heading) {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index !== null) cart.items[index] = item;
+            else cart.items.push(item)
+            updateCartTotal();
+
+            updateCountIcon();
+            updateToolbarCart();
+            closeToolbarWish();
+            openToolbarCart();
+            if (pageCart) updatePageCart();
+            if (checkout) updateCheckoutCart();
+        }
+        window.addEventListener('add_to_cart', addWishToCart)
     }
 }();
