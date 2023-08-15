@@ -209,91 +209,101 @@ const main_init = function () {
 
     if (itemView) {
         const items = itemView.querySelectorAll('.item-view__item');
+        const wrapper = itemView.querySelector('.item-view__image-wrapper');
         const image = itemView.querySelector('.item-view__image');
-        const mainImg = image.querySelector('img');
-        const delay = parseFloat(getComputedStyle(mainImg).transitionDuration) * 1000;
 
-        const changeSrc = (e) => {
-            const buttonImg = e.target.querySelector('img');
-
-            buttonImg.classList.add('_active');
-            mainImg.classList.add('_active');
-            itemView.classList.add('_active');
-
-            setTimeout(() => {
-                let tempSrc = mainImg.getAttribute('src');
-                mainImg.setAttribute('src', buttonImg.getAttribute('src'));
-                buttonImg.setAttribute('src', tempSrc);
-
-                buttonImg.classList.remove('_active');
-                mainImg.classList.remove('_active');
-                itemView.classList.remove('_active');
-            }, delay)
+        const changeImage = (e) => {
+            image.querySelector('img')
+                .setAttribute(
+                    'src',
+                    e.target.querySelector('img')
+                        .getAttribute('src')
+                )
+            for (const item of items) {
+                if (item !== e.target && item.classList.contains('_active')) {
+                    item.classList.remove('_active');
+                }
+            }
+            if (!e.target.classList.contains('_active')) {
+                e.target.classList.add('_active');
+            }
         }
-
         for (const item of items) {
-            const button = item.querySelector('button');
-            button.addEventListener('click', changeSrc)
+            item.addEventListener('mouseover', changeImage);
+        }
+        image.querySelector('img')
+            .setAttribute(
+                'src',
+                items[0].querySelector('img')
+                    .getAttribute('src')
+            )
+        items[0].classList.add('_active');
+
+        let scale = 2;
+        const isMobile = () => {
+            return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ||
+                (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) ||
+                ('ontouchstart' in document.documentElement && navigator.userAgent.match(/Mobi/))
+                ? true : false;
+        }
+        const imageScale = (e) => {
+            const rect = wrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const perLeft = ((100 - 100 / scale) * x) / rect.width;
+            const perTop = ((100 - 100 / scale) * y) / rect.height;
+            const pxLeft = (rect.width * scale * perLeft) / 100;
+            const pxTop = (rect.height * scale * perTop) / 100;
+
+            wrapper.style.maxHeight = `${rect.height}px`;
+            image.style.width = `${rect.width * scale}px`;
+            image.style.left = `-${pxLeft}px`;
+            image.style.top = `-${pxTop}px`;
+        }
+        if (!isMobile()) {
+            wrapper.addEventListener('mouseover', () => {
+                wrapper.addEventListener('mousemove', imageScale)
+                image.classList.add('_scale');
+            })
+            wrapper.addEventListener('mouseout', () => {
+                wrapper.removeEventListener('mouseover', imageScale);
+                image.classList.remove('_scale');
+                image.setAttribute('style', '');
+                wrapper.setAttribute('style', '');
+            })
+            wrapper.addEventListener('wheel', (e) => {
+                e.preventDefault();
+
+                if (e.deltaY > 0) {
+                    if (scale <= 1.2) scale = 1.2;
+                    scale -= 0.15;
+                } else {
+                    if (scale >= 5) scale = 5;
+                    scale += 0.15;
+                }
+                imageScale(e);
+            })
         }
     }
 
     if (itemAbout) {
-        const favorite = itemAbout.querySelector('.item-about__heading button');
-        const sizeItems = itemAbout.querySelectorAll('.item-size__item');
-        const colorItems = itemAbout.querySelectorAll('.item-color__item');
-        const itemCount = itemAbout.querySelector('.item-count');
-
-        const addFavorite = () => {
-            favorite.classList.toggle('_active');
-        }
-        favorite.addEventListener('click', addFavorite);
-
-        const changeSize = (e) => {
-            for (const sizeItem of sizeItems) {
-                if (sizeItem.classList.contains('_active')) {
-                    sizeItem.classList.remove('_active')
-                }
-            }
-            e.target.closest('.item-size__item').classList.add('_active');
-        }
-        for (const sizeItem of sizeItems) {
-            sizeItem.addEventListener('click', changeSize);
-        }
-
-        const changeColor = (e) => {
-            for (const colorItem of colorItems) {
-                if (colorItem.classList.contains('_active')) {
-                    colorItem.classList.remove('_active')
-                }
-            }
-            e.target.closest('.item-color__item').classList.add('_active');
-        }
-        for (const colorItem of colorItems) {
-            const button = colorItem.querySelector('button');
-            const color = button.dataset.color;
-            button.style.backgroundColor = color;
-
-            colorItem.addEventListener('click', changeColor);
-        }
+        const buttons = itemAbout.querySelectorAll('.count-button');
+        const out = itemAbout.querySelector('.item-count .out');
 
         const counter = (e) => {
-            const decr = itemCount.querySelector('.decr');
-            const out = itemCount.querySelector('.out');
-            const incr = itemCount.querySelector('.incr');
-
-            if (e.target == decr) {
-                if (Number(out.innerHTML) > 1) {
-                    out.innerHTML = Number(out.innerHTML) - 1;
-                }
-            }
-
-            if (e.target == incr) {
-                if (Number(out.innerHTML) < 100) {
-                    out.innerHTML = Number(out.innerHTML) + 1;
-                }
+            const button = e.target;
+            const event = new Event('change', { 'bubbles': true });
+            if (button.classList.contains('incr') && out.value < out.max) {
+                out.value++;
+                e.target.dispatchEvent(event);
+            } else if (button.classList.contains('decr') && out.value > out.min) {
+                out.value--;
+                e.target.dispatchEvent(event);
             }
         }
-        itemCount.addEventListener('click', counter);
+        for (const button of buttons) {
+            button.addEventListener('click', counter);
+        }
     }
 
     if (itemFeature) {

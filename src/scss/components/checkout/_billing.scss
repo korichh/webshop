@@ -218,6 +218,8 @@
     .row {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
         margin-bottom: 12px;
 
         @media (max-width: $break_768) {
@@ -237,9 +239,21 @@
         }
     }
 
-    // .billing-table__item
+    // .billing-table__list
+    &__list {
+        padding: 0;
+        list-style-type: none;
+        margin: 20px 0;
+    }
 
     &__item {
+        margin: 20px 0;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #d9d9d9;
+    }
+
+    // .billing-table__heading
+    &__heading {
         color: #000;
         font-size: 16px;
         font-weight: 300;

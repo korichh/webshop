@@ -34,6 +34,8 @@
 
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script defer src="js/StickySidebar.js"></script>
+    <script defer src="js/cart.js"></script>
+    <script defer src="js/wishlist.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 
@@ -80,11 +82,13 @@
                             </li>
                             <li class="menu-item">
                                 <a href="#favorite">
+                                    <div class="wish menu-item-count"></div>
                                     <img src="./img/favorite.svg" alt="">
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#cart">
+                                    <div class="count menu-item-count"></div>
                                     <img src="./img/cart.svg" alt="">
                                 </a>
                             </li>
@@ -109,11 +113,13 @@
                             </li>
                             <li class="menu-item">
                                 <a href="#favorite">
+                                    <div class="wish menu-item-count"></div>
                                     <img src="./img/favorite.svg" alt="">
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#cart">
+                                    <div class="count menu-item-count"></div>
                                     <img src="./img/cart.svg" alt="">
                                 </a>
                             </li>
@@ -172,8 +178,15 @@
                                 </div>
                                 <div class="toolbar-section" data-id="#favorite">
                                     <h2 class="toolbar-section__heading">
-                                        Favorites
+                                        Wishlist
                                     </h2>
+                                    <div class="toolbar-section__inner">
+                                        <div class="toolbar-section__wishlist toolbar-wishlist">
+                                            <ul class="toolbar-wishlist__list">
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="toolbar-section" data-id="#cart">
                                     <h2 class="toolbar-section__heading">
@@ -182,47 +195,11 @@
                                     <div class="toolbar-section__inner">
                                         <div class="toolbar-section__cart toolbar-cart">
                                             <ul class="toolbar-cart__list">
-                                                <li class="toolbar-cart__item">
-                                                    <div class="toolbar-cart__item-image">
-                                                        <img src="img/item/item1.png" alt="">
-                                                    </div>
-                                                    <div class="toolbar-cart__item-content">
-                                                        <h4 class="toolbar-cart__item-heading">
-                                                            Asgaard sofa
-                                                        </h4>
-                                                        <div class="toolbar-cart__item-count">
-                                                            <span class="count">1</span>
-                                                            <span>X</span>
-                                                            <span class="price">Rs. 250,000.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <button class="toolbar-cart__item-delete">
-                                                        <img src="img/delete.svg" alt="">
-                                                    </button>
-                                                </li>
-                                                <li class="toolbar-cart__item">
-                                                    <div class="toolbar-cart__item-image">
-                                                        <img src="img/item/item2.png" alt="">
-                                                    </div>
-                                                    <div class="toolbar-cart__item-content">
-                                                        <h4 class="toolbar-cart__item-heading">
-                                                            Outdoor sofa set
-                                                        </h4>
-                                                        <div class="toolbar-cart__item-count">
-                                                            <span class="count">1</span>
-                                                            <span>X</span>
-                                                            <span class="price">Rs. 244,000.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <button class="toolbar-cart__item-delete">
-                                                        <img src="img/delete.svg" alt="">
-                                                    </button>
-                                                </li>
                                             </ul>
                                             <div class="toolbar-cart__bottom">
                                                 <div class="toolbar-cart__total">
-                                                    <span>Subtotal</span>
-                                                    <span class="total">Rs. 494,000.00</span>
+                                                    <span>Total</span>
+                                                    <span class="total">Rs. 0</span>
                                                 </div>
                                                 <div class="toolbar-cart__buttons">
                                                     <div class="toolbar-cart__button-wrapper">
@@ -254,38 +231,34 @@
                             <div class="item-product__breadcrumbs item-breadcrumbs">
                                 <a href="index.html">Home</a> <a href="shop.html">Shop</a> <span>Asgaard sofa</span>
                             </div>
-                            <div class="item-product__inner">
+                            <form action="#" method="post" class="item-product__inner">
                                 <div class="item-product__view item-view">
                                     <ul class="item-view__list">
                                         <li class="item-view__item">
-                                            <button>
-                                                <img src="img/item/item2.png" alt="">
-                                            </button>
+                                            <img src="img/item/item1.png" alt="">
                                         </li>
                                         <li class="item-view__item">
-                                            <button>
-                                                <img src="img/item/item3.png" alt="">
-                                            </button>
+                                            <img src="img/item/item2.png" alt="">
                                         </li>
                                         <li class="item-view__item">
-                                            <button>
-                                                <img src="img/item/item4.png" alt="">
-                                            </button>
+                                            <img src="img/item/item3.png" alt="">
                                         </li>
                                         <li class="item-view__item">
-                                            <button>
-                                                <img src="img/item/item5.png" alt="">
-                                            </button>
+                                            <img src="img/item/item4.png" alt="">
                                         </li>
                                     </ul>
-                                    <div class="item-view__image">
-                                        <img src="img/item/item1.png" alt="">
+                                    <div class="item-view__image-wrapper">
+                                        <div class="item-view__image">
+                                            <img src="img/item/item1.png" alt="">
+                                            <input type="text" name="image" value="img/item/item1.png" hidden>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="item-product__about item-about">
                                     <div class="item-about__heading">
                                         <h1>Asgaard sofa</h1>
-                                        <button>
+                                        <input type="text" name="heading" value="Asgaard sofa" hidden>
+                                        <button class="favorite-button">
                                             <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                                             </svg>
@@ -293,6 +266,7 @@
                                     </div>
                                     <div class="item-about__price">
                                         <p>Rs. 250,000.00</p>
+                                        <input type="text" name="price" value="250,000.00" hidden>
                                     </div>
                                     <div class="item-about__rating">
                                         <div class="item-about__score">
@@ -315,44 +289,38 @@
                                         <div class="item-size__title">
                                             Size
                                         </div>
-                                        <ul class="item-size__list">
-                                            <li class="item-size__item _active">
-                                                <button>L</button>
-                                            </li>
-                                            <li class="item-size__item">
-                                                <button>XL</button>
-                                            </li>
-                                            <li class="item-size__item">
-                                                <button>XS</button>
-                                            </li>
-                                        </ul>
+                                        <div class="item-size__list">
+                                            <input type="radio" name="size" value="L" id="size_L" checked hidden>
+                                            <label class="item-size__item" for="size_L">L</label>
+                                            <input type="radio" name="size" value="XL" id="size_XL" hidden>
+                                            <label class="item-size__item" for="size_XL">XL</label>
+                                            <input type="radio" name="size" value="XS" id="size_XS" hidden>
+                                            <label class="item-size__item" for="size_XS">XS</label>
+                                        </div>
                                     </div>
                                     <div class="item-about__color item-color">
                                         <div class="item-color__title">
                                             Color
                                         </div>
-                                        <ul class="item-color__list">
-                                            <li class="item-color__item _active">
-                                                <button data-color="#816DFA"></button>
-                                            </li>
-                                            <li class="item-color__item">
-                                                <button data-color="#000000"></button>
-                                            </li>
-                                            <li class="item-color__item">
-                                                <button data-color="#CDBA7B"></button>
-                                            </li>
-                                        </ul>
+                                        <div class="item-color__list">
+                                            <input type="radio" name="color" value="#816DFA" id="color_#816DFA" checked hidden>
+                                            <label class="item-color__item" for="color_#816DFA" style="background-color: #816DFA;"></label>
+                                            <input type="radio" name="color" value="#000000" id="color_#000000" hidden>
+                                            <label class="item-color__item" for="color_#000000" style="background-color: #000000;"></label>
+                                            <input type="radio" name="color" value="#CDBA7B" id="color_#CDBA7B" hidden>
+                                            <label class="item-color__item" for="color_#CDBA7B" style="background-color: #CDBA7B;"></label>
+                                        </div>
                                     </div>
                                     <div class="item-about__buttons">
                                         <div class="item-about__count item-count">
-                                            <button class="decr">-</button>
-                                            <div class="out">1</div>
-                                            <button class="incr">+</button>
+                                            <div class="decr count-button">-</div>
+                                            <input name="count" type="number" min="1" max="5" value="1" class="out">
+                                            <div class="incr count-button">+</div>
                                         </div>
                                         <div class="item-about__button-wrapper">
-                                            <a href="#" class="item-about__button">
+                                            <button class="item-about__button">
                                                 Add To Cart
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                     <table class="item-about__details item-details">
@@ -380,7 +348,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <div class="item-feature">

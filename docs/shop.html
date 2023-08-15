@@ -34,6 +34,8 @@
 
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script defer src="js/StickySidebar.js"></script>
+    <script defer src="js/cart.js"></script>
+    <script defer src="js/wishlist.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 
@@ -80,11 +82,13 @@
                             </li>
                             <li class="menu-item">
                                 <a href="#favorite">
+                                    <div class="wish menu-item-count"></div>
                                     <img src="./img/favorite.svg" alt="">
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#cart">
+                                    <div class="count menu-item-count"></div>
                                     <img src="./img/cart.svg" alt="">
                                 </a>
                             </li>
@@ -109,11 +113,13 @@
                             </li>
                             <li class="menu-item">
                                 <a href="#favorite">
+                                    <div class="wish menu-item-count"></div>
                                     <img src="./img/favorite.svg" alt="">
                                 </a>
                             </li>
                             <li class="menu-item">
                                 <a href="#cart">
+                                    <div class="count menu-item-count"></div>
                                     <img src="./img/cart.svg" alt="">
                                 </a>
                             </li>
@@ -172,8 +178,15 @@
                                 </div>
                                 <div class="toolbar-section" data-id="#favorite">
                                     <h2 class="toolbar-section__heading">
-                                        Favorites
+                                        Wishlist
                                     </h2>
+                                    <div class="toolbar-section__inner">
+                                        <div class="toolbar-section__wishlist toolbar-wishlist">
+                                            <ul class="toolbar-wishlist__list">
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="toolbar-section" data-id="#cart">
                                     <h2 class="toolbar-section__heading">
@@ -182,47 +195,11 @@
                                     <div class="toolbar-section__inner">
                                         <div class="toolbar-section__cart toolbar-cart">
                                             <ul class="toolbar-cart__list">
-                                                <li class="toolbar-cart__item">
-                                                    <div class="toolbar-cart__item-image">
-                                                        <img src="img/item/item1.png" alt="">
-                                                    </div>
-                                                    <div class="toolbar-cart__item-content">
-                                                        <h4 class="toolbar-cart__item-heading">
-                                                            Asgaard sofa
-                                                        </h4>
-                                                        <div class="toolbar-cart__item-count">
-                                                            <span class="count">1</span>
-                                                            <span>X</span>
-                                                            <span class="price">Rs. 250,000.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <button class="toolbar-cart__item-delete">
-                                                        <img src="img/delete.svg" alt="">
-                                                    </button>
-                                                </li>
-                                                <li class="toolbar-cart__item">
-                                                    <div class="toolbar-cart__item-image">
-                                                        <img src="img/item/item2.png" alt="">
-                                                    </div>
-                                                    <div class="toolbar-cart__item-content">
-                                                        <h4 class="toolbar-cart__item-heading">
-                                                            Outdoor sofa set
-                                                        </h4>
-                                                        <div class="toolbar-cart__item-count">
-                                                            <span class="count">1</span>
-                                                            <span>X</span>
-                                                            <span class="price">Rs. 244,000.00</span>
-                                                        </div>
-                                                    </div>
-                                                    <button class="toolbar-cart__item-delete">
-                                                        <img src="img/delete.svg" alt="">
-                                                    </button>
-                                                </li>
                                             </ul>
                                             <div class="toolbar-cart__bottom">
                                                 <div class="toolbar-cart__total">
-                                                    <span>Subtotal</span>
-                                                    <span class="total">Rs. 494,000.00</span>
+                                                    <span>Total</span>
+                                                    <span class="total">Rs. 0</span>
                                                 </div>
                                                 <div class="toolbar-cart__buttons">
                                                     <div class="toolbar-cart__button-wrapper">
@@ -408,16 +385,23 @@
                         <div class="container">
                             <ul class="products-inner__list products-list">
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product1.png" alt="">
+                                                <input type="text" name="image" value="img/products/product1.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Trenton modular sofa_3
+                                                    <input type="text" name="heading" value="Trenton modular sofa_3" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -427,21 +411,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 25,000.00
+                                                <input type="text" name="price" value="25,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product2.png" alt="">
+                                                <input type="text" name="image" value="img/products/product2.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Granite dining table with dining chair
+                                                    <input type="text" name="heading" value="Granite dining table with dining chair" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -451,21 +443,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 25,000.00
+                                                <input type="text" name="price" value="25,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product3.png" alt="">
+                                                <input type="text" name="image" value="img/products/product3.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Outdoor bar table and stool
+                                                    <input type="text" name="heading" value="Outdoor bar table and stool" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -475,21 +475,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 25,000.00
+                                                <input type="text" name="price" value="25,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product4.png" alt="">
+                                                <input type="text" name="image" value="img/products/product4.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Plain console with teak mirror
+                                                    <input type="text" name="heading" value="Plain console with teak mirror" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -499,21 +507,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 25,000.00
+                                                <input type="text" name="price" value="25,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product5.png" alt="">
+                                                <input type="text" name="image" value="img/products/product5.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Grain coffee table
+                                                    <input type="text" name="heading" value="Grain coffee table" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -523,21 +539,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 15,000.00
+                                                <input type="text" name="price" value="15,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product6.png" alt="">
+                                                <input type="text" name="image" value="img/products/product6.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Kent coffee table
+                                                    <input type="text" name="heading" value="Kent coffee table" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -547,21 +571,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 225,000.00
+                                                <input type="text" name="price" value="225,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product7.png" alt="">
+                                                <input type="text" name="image" value="img/products/product7.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Round coffee table_color 2
+                                                    <input type="text" name="heading" value="Round coffee table_color 2" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -571,21 +603,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 251,000.00
+                                                <input type="text" name="price" value="251,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product8.png" alt="">
+                                                <input type="text" name="image" value="img/products/product8.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Reclaimed teak coffee table
+                                                    <input type="text" name="heading" value="Reclaimed teak coffee table" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -595,21 +635,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 25,200.00
+                                                <input type="text" name="price" value="25,200.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product9.png" alt="">
+                                                <input type="text" name="image" value="img/products/product9.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Plain console_
+                                                    <input type="text" name="heading" value="Plain console_" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -619,21 +667,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 258,200.00
+                                                <input type="text" name="price" value="258,200.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product10.png" alt="">
+                                                <input type="text" name="image" value="img/products/product10.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Reclaimed teak Sideboard
+                                                    <input type="text" name="heading" value="Reclaimed teak Sideboard" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -643,21 +699,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 20,000.00
+                                                <input type="text" name="price" value="20,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product11.png" alt="">
+                                                <input type="text" name="image" value="img/products/product11.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     SJP_0825
+                                                    <input type="text" name="heading" value="SJP_0825" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -667,21 +731,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 200,000.00
+                                                <input type="text" name="price" value="200,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product12.png" alt="">
+                                                <input type="text" name="image" value="img/products/product12.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Bella chair and table
+                                                    <input type="text" name="heading" value="Bella chair and table" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -691,21 +763,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 100,000.00
+                                                <input type="text" name="price" value="100,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product13.png" alt="">
+                                                <input type="text" name="image" value="img/products/product13.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Granite square side table
+                                                    <input type="text" name="heading" value="Granite square side table" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -715,21 +795,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 258,800.00
+                                                <input type="text" name="price" value="258,800.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product14.png" alt="">
+                                                <input type="text" name="image" value="img/products/product14.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Asgaard sofa
+                                                    <input type="text" name="heading" value="Asgaard sofa" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -739,21 +827,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 250,000.00
+                                                <input type="text" name="price" value="250,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product15.png" alt="">
+                                                <input type="text" name="image" value="img/products/product15.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Maya sofa three seater
+                                                    <input type="text" name="heading" value="Maya sofa three seater" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -763,21 +859,29 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 115,000.00
+                                                <input type="text" name="price" value="115,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                                 <li class="products-list__item products-item">
-                                    <div class="products-item__wrapper">
+                                    <form action="#" method="post" class="products-item__wrapper">
+                                        <button class="products-item__favorite">
+                                            <svg viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6.83333 1C3.61217 1 1 3.58533 1 6.775C1 9.34983 2.02083 15.4608 12.0693 21.6383C12.2493 21.7479 12.456 21.8058 12.6667 21.8058C12.8774 21.8058 13.084 21.7479 13.264 21.6383C23.3125 15.4608 24.3333 9.34983 24.3333 6.775C24.3333 3.58533 21.7212 1 18.5 1C15.2788 1 12.6667 4.5 12.6667 4.5C12.6667 4.5 10.0545 1 6.83333 1Z" stroke="#FF0000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </button>
                                         <div class="products-item__image">
                                             <a href="product.html">
                                                 <img src="img/products/product16.png" alt="">
+                                                <input type="text" name="image" value="img/products/product16.png" hidden>
                                             </a>
                                         </div>
                                         <div class="products-item__content">
                                             <h2 class="products-item__heading">
                                                 <a href="product.html">
                                                     Outdoor sofa set
+                                                    <input type="text" name="heading" value="Outdoor sofa set" hidden>
                                                 </a>
                                             </h2>
                                             <div class="products-item__text">
@@ -787,9 +891,10 @@
                                             </div>
                                             <div class="products-item__price">
                                                 Rs. 244,000.00
+                                                <input type="text" name="price" value="244,000.00" hidden>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </li>
                             </ul>
                             <div class="products-inner__pagination products-pagination">
