@@ -133,53 +133,64 @@ const main_init = function () {
         }
         productsToolbar.addEventListener('click', closeWrapperToolbar)
 
-        const rangeInput = document.querySelectorAll(".range-input input"),
-            priceInput = document.querySelectorAll(".price-input input"),
-            range = document.querySelector(".slider .progress");
-        let priceGap = 100;
+        const price = document.querySelector('.products-toolbar__price')
+        if (price) {
+            const minVal = price.querySelector('.min-val')
+            const maxVal = price.querySelector('.max-val')
+            const priceInputMin = price.querySelector('.min-input')
+            const priceInputMax = price.querySelector('.max-input')
+            const minGap = 0
+            const range = price.querySelector('.slider-track')
+            const sliderMinValue = parseInt(minVal.min)
+            const sliderMaxValue = parseInt(maxVal.max)
 
-        let minPrice = parseInt(priceInput[0].value),
-            maxPrice = parseInt(priceInput[1].value);
-        range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
-        range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
-
-
-        priceInput.forEach(input => {
-            input.addEventListener("input", e => {
-                let minPrice = parseInt(priceInput[0].value),
-                    maxPrice = parseInt(priceInput[1].value);
-
-                if ((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max) {
-                    if (e.target.className === "input-min") {
-                        rangeInput[0].value = minPrice;
-                        range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
-                    } else {
-                        rangeInput[1].value = maxPrice;
-                        range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
-                    }
+            function slideMin() {
+                let gap = parseInt(maxVal.value) - parseInt(minVal.value)
+                if (gap <= minGap) {
+                    minVal.value = parseInt(maxVal.value) - minGap
                 }
-            });
-        });
+                priceInputMin.value = minVal.value
+                setArea()
+            }
+            minVal.addEventListener('input', slideMin)
+            slideMin()
 
-        rangeInput.forEach(input => {
-            input.addEventListener("input", e => {
-                let minVal = parseInt(rangeInput[0].value),
-                    maxVal = parseInt(rangeInput[1].value);
-
-                if ((maxVal - minVal) < priceGap) {
-                    if (e.target.className === "range-min") {
-                        rangeInput[0].value = maxVal - priceGap
-                    } else {
-                        rangeInput[1].value = minVal + priceGap;
-                    }
-                } else {
-                    priceInput[0].value = minVal;
-                    priceInput[1].value = maxVal;
-                    range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
-                    range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+            function slideMax() {
+                let gap = parseInt(maxVal.value) - parseInt(minVal.value)
+                if (gap <= minGap) {
+                    maxVal.value = parseInt(minVal.value) + minGap
                 }
-            });
-        });
+                priceInputMax.value = maxVal.value
+                setArea()
+            }
+            maxVal.addEventListener('input', slideMax)
+            slideMax()
+
+            function setArea() {
+                range.style.left = `${((minVal.value - minVal.min / 2) / sliderMaxValue) * 100}%`
+                range.style.right = `${100 - ((maxVal.value - minVal.min / 2) / sliderMaxValue) * 100}%`
+            }
+
+            function setMinInput() {
+                let minPrice = parseInt(priceInputMin.value)
+                if (minPrice < sliderMinValue) {
+                    priceInputMin.value = sliderMinValue
+                }
+                minVal.value = priceInputMin.value
+                slideMin()
+            }
+            priceInputMin.addEventListener('change', setMinInput)
+
+            function setMaxInput() {
+                let maxPrice = parseInt(priceInputMax.value)
+                if (maxPrice > sliderMaxValue) {
+                    priceInputMax.value = sliderMaxValue
+                }
+                maxVal.value = priceInputMax.value
+                slideMax()
+            }
+            priceInputMax.addEventListener('change', setMaxInput)
+        }
     }
 
     if (productsList) {

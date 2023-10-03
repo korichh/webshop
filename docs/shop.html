@@ -247,7 +247,7 @@
                 <div class="products-wrapper">
                     <div class="products-inner">
                         <div class="products-inner__tab products-tab">
-                            <div class="products-tab__toolbar products-toolbar">
+                            <div class="products-tab__toolbar products-toolbar _active">
                                 <div class="products-toolbar__wrapper">
                                     <div class="products-toolbar__inner">
                                         <button class="products-toolbar__close">
@@ -304,23 +304,24 @@
                                                 <h3 class="products-toolbar__price-title products-toolbar__title">
                                                     Price
                                                 </h3>
-                                                <div class="products-toolbar__range">
-                                                    <div class="slider">
-                                                        <div class="progress"></div>
+                                                <div class="products-toolbar__slider">
+                                                    <div class="range-slider">
+                                                        <span class="slider-track"></span>
+                                                        <input type="range" name="min_val" class="min-val" min="2" max="90" value="2">
+                                                        <input type="range" name="max_val" class="max-val" min="2" max="90" value="90">
                                                     </div>
-                                                    <div class="range-input">
-                                                        <input type="range" class="range-min" min="0" max="500000" value="50000" step="10">
-                                                        <input type="range" class="range-max" min="0" max="500000" value="300000" step="10">
-                                                    </div>
-                                                    <div class="price-input">
-                                                        <div class="field">
-                                                            <label for="range-min">Min</label>
-                                                            <input id="range-min" type="number" class="input-min" value="50000">
+                                                    <div class="input-box">
+                                                        <div class="min-box">
+                                                            <div class="input-wrap">
+                                                                <span class="input-addon">$</span>
+                                                                <input type="number" name="min_input" class="input-field min-input">
+                                                            </div>
                                                         </div>
-                                                        <div class="separator">-</div>
-                                                        <div class="field">
-                                                            <label for="range-max">Max</label>
-                                                            <input id="range-max" type="number" class="input-max" value="300000">
+                                                        <div class="max-box">
+                                                            <div class="input-wrap">
+                                                                <span class="input-addon">$</span>
+                                                                <input type="number" name="max_input" class="input-field max-input">
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
